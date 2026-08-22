@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Property Details | OurHomeIndia Real Estate</title>
+  <meta name="description" content="View verified property photos, specifications, floor layout, and contact property advisors at OurHomeIndia.">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Custom Design Tokens Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" type="image/jpeg" href="images/logo.jpeg">
+  <link rel="apple-touch-icon" href="images/logo.jpeg">
+  <meta property="og:image" content="images/logo.jpeg">
+</head>
+<body class="bg-canvas text-body-default min-h-screen flex flex-col antialiased selection:bg-[#cc785c] selection:text-white">
+
+  <!-- Header / Navigation Bar -->
+  <header class="top-nav">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2.5 text-ink group">
+        <img src="images/logo.jpeg" alt="OurHomeIndia Logo" class="h-9 sm:h-10 w-auto object-contain rounded-md transition-transform duration-200 group-hover:scale-105">
+        <div class="flex flex-col">
+          <span class="font-display text-2xl font-semibold tracking-tight text-ink leading-tight">OurHome<span class="text-coral">India</span></span>
+          <span class="text-[10px] tracking-wider uppercase text-muted-custom font-mono -mt-0.5">Jaitpur • New Delhi</span>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-body-strong">
+        <a href="index.html" class="hover:text-coral transition-colors">Home</a>
+        <a href="buy.html" class="hover:text-coral transition-colors">Buy</a>
+        <a href="rent.html" class="hover:text-coral transition-colors">Rent</a>
+        <a href="about.html" class="hover:text-coral transition-colors">About Us</a>
+        <a href="contact.html" class="hover:text-coral transition-colors">Contact</a>
+      </nav>
+
+      <div class="hidden sm:flex items-center gap-3">
+        <a href="post-property.html" class="btn-secondary text-xs">Post Property</a>
+        <a href="contact.html" class="btn-primary text-xs">Enquire Now</a>
+      </div>
+
+      <!-- Animated Hamburger Button (Mobile) -->
+      <button id="mobile-menu-btn" class="hamburger-btn md:hidden" aria-label="Toggle navigation menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Backdrop Overlay -->
+  <div id="mobile-overlay" class="mobile-overlay md:hidden"></div>
+
+  <!-- Slide-Over Mobile Navigation Panel -->
+  <div id="mobile-panel" class="mobile-panel md:hidden">
+    <div class="flex items-center justify-between pb-5 border-b border-hairline">
+      <div class="flex items-center gap-2">
+        <img src="images/logo.jpeg" alt="OurHomeIndia Logo" class="h-8 w-auto object-contain rounded-md">
+        <div class="flex flex-col">
+          <span class="font-display text-xl font-semibold text-ink leading-tight">OurHome<span class="text-coral">India</span></span>
+          <span class="text-[9px] tracking-wider uppercase text-muted-custom font-mono">Jaitpur • New Delhi</span>
+        </div>
+      </div>
+      <button id="mobile-drawer-close" class="p-2 text-muted-custom hover:text-ink rounded-lg hover:bg-surface-card" aria-label="Close Menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+    </div>
+
+    <div class="flex flex-col py-6 space-y-1">
+      <a href="index.html" class="mobile-nav-link">Home <span>&rarr;</span></a>
+      <a href="buy.html" class="mobile-nav-link">Buy Properties <span>&rarr;</span></a>
+      <a href="rent.html" class="mobile-nav-link">Rent Properties <span>&rarr;</span></a>
+      <a href="about.html" class="mobile-nav-link">About Us <span>&rarr;</span></a>
+      <a href="contact.html" class="mobile-nav-link">Contact Us <span>&rarr;</span></a>
+    </div>
+
+    <div class="mt-auto space-y-3 pt-6 border-t border-hairline">
+      <a href="post-property.html" class="btn-secondary w-full justify-center py-3 text-xs">
+        <svg class="w-4 h-4 text-coral" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+        Post Property Free
+      </a>
+      <a href="contact.html" class="btn-primary w-full justify-center py-3 text-xs">
+        Talk to Local Advisor
+      </a>
+      <div class="text-center pt-2 text-[11px] text-muted-custom font-mono">
+        New Delhi, India • contact@ourhomeindia.com
+      </div>
+    </div>
+  </div>
+
+  <main class="flex-1 py-8 sm:py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Breadcrumbs -->
+      <nav class="flex items-center gap-2 text-xs text-muted-custom mb-6 scroll-reveal">
+        <a href="index.html" class="hover:text-coral">Home</a>
+        <span>/</span>
+        <a id="breadcrumb-purpose-link" href="buy.html" class="hover:text-coral">Properties</a>
+        <span>/</span>
+        <span id="breadcrumb-title" class="text-body-strong font-medium truncate max-w-xs sm:max-w-md">Property Detail</span>
+      </nav>
+
+      <!-- Main Property Overview Header -->
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-6 border-b border-hairline mb-8 scroll-reveal">
+        <div class="space-y-2">
+          <div class="flex flex-wrap items-center gap-2">
+            <span id="prop-purpose-badge" class="badge-coral">For Sale</span>
+            <span id="prop-type-badge" class="badge-pill bg-surface-card text-ink">Builder Floor</span>
+            <span class="badge-verified"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> Verified by OurHomeIndia</span>
+          </div>
+          <h1 id="prop-title" class="display-md text-ink font-semibold">Luxury 3 BHK Builder Floor with Terrace Garden</h1>
+          <p id="prop-address" class="text-xs sm:text-sm text-muted-custom flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-coral shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+            <span>South Delhi, New Delhi 110044</span>
+          </p>
+        </div>
+
+        <div class="lg:text-right shrink-0 bg-surface-card p-4 sm:p-5 rounded-xl border border-hairline">
+          <p class="text-xs text-muted-custom">Offered Price</p>
+          <div id="prop-price" class="font-display text-3xl sm:text-4xl font-semibold text-ink">₹68 Lakhs</div>
+          <p id="prop-price-sub" class="text-xs text-coral font-medium mt-0.5">₹5,230 / sq.ft</p>
+        </div>
+      </div>
+
+      <!-- Gallery & Quick Action Bar -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
+        
+        <!-- Gallery Column (8 Cols) -->
+        <div class="lg:col-span-8 space-y-4 scroll-reveal">
+          <!-- Main Hero Image Frame -->
+          <div class="relative aspect-[16/10] rounded-xl overflow-hidden bg-stone-100 border border-hairline shadow-sm">
+            <img id="main-gallery-img" src="" alt="Property hero view" class="w-full h-full object-cover transition-all duration-300">
+          </div>
+          <!-- Thumbnail Row -->
+          <div id="gallery-thumbnails" class="grid grid-cols-4 gap-3">
+            <!-- Injected by JS -->
+          </div>
+        </div>
+
+        <!-- Sticky Enquiry & Contact Box (4 Cols) -->
+        <div class="lg:col-span-4 scroll-reveal delay-200">
+          <div class="bg-surface-card border border-hairline rounded-xl p-6 shadow-sm sticky top-24 space-y-6">
+            
+            <div class="border-b border-hairline pb-4">
+              <span class="text-xs text-muted-custom font-medium uppercase tracking-wider block mb-1">Direct Property Lead</span>
+              <h3 class="font-display text-xl text-ink font-semibold">Contact Listing Advisor</h3>
+              <div class="flex items-center gap-3 mt-3">
+                <div class="w-10 h-10 rounded-full bg-surface-dark text-white flex items-center justify-center font-bold text-sm">
+                  MV
+                </div>
+                <div>
+                  <h4 id="agent-name" class="text-sm font-semibold text-ink">Mohit Verma</h4>
+                  <p id="agent-role" class="text-xs text-muted-custom">Senior Property Advisor</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Lead Form -->
+            <form id="property-lead-form" onsubmit="handleLeadFormSubmit(event)" class="space-y-3.5 text-xs">
+              <div>
+                <label class="block font-medium text-body-strong mb-1">Your Name *</label>
+                <input type="text" name="lead_name" required placeholder="Enter full name" class="form-input text-xs">
+              </div>
+              <div>
+                <label class="block font-medium text-body-strong mb-1">Phone Number (WhatsApp) *</label>
+                <input type="tel" name="lead_phone" required placeholder="+91 98765 43210" class="form-input text-xs">
+              </div>
+              <div>
+                <label class="block font-medium text-body-strong mb-1">Email Address</label>
+                <input type="email" name="lead_email" placeholder="name@email.com" class="form-input text-xs">
+              </div>
+              <div>
+                <label class="block font-medium text-body-strong mb-1">Message / Visit Preference</label>
+                <textarea name="lead_msg" rows="3" class="form-input text-xs">I am interested in this property and would like to arrange a site visit.</textarea>
+              </div>
+
+              <button type="submit" class="btn-primary w-full py-2.5 text-xs justify-center font-medium">
+                Request Callback &amp; Site Visit
+              </button>
+
+              <a id="prop-whatsapp-btn" href="#" target="_blank" class="btn-secondary w-full py-2.5 text-xs justify-center gap-2 border-emerald-300 text-emerald-800 bg-emerald-50 hover:bg-emerald-100">
+                <svg class="w-4 h-4 fill-emerald-600" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                Instant WhatsApp Chat
+              </a>
+            </form>
+
+            <div class="text-[11px] text-muted-custom space-y-1 pt-2 border-t border-hairline">
+              <p>📍 Office: New Delhi, India</p>
+              <p>✉️ Email: contact@ourhomeindia.com</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Detailed Specifications & Description -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16">
+        
+        <div class="lg:col-span-8 space-y-10">
+          
+          <!-- Key Specs Table -->
+          <div class="bg-surface-card border border-hairline rounded-xl p-6 sm:p-8 scroll-reveal">
+            <h3 class="font-display text-2xl text-ink font-semibold mb-6">Property Overview &amp; Specifications</h3>
+            
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-6 text-xs">
+              <div class="border-b border-hairline pb-3">
+                <span class="text-muted-custom block">Bedrooms / BHK</span>
+                <span id="spec-bhk" class="font-semibold text-ink text-sm mt-0.5 block">3 BHK</span>
+              </div>
+              <div class="border-b border-hairline pb-3">
+                <span class="text-muted-custom block">Super Area</span>
+                <span id="spec-area" class="font-semibold text-ink text-sm mt-0.5 block">1,300 sq.ft</span>
+              </div>
+              <div class="border-b border-hairline pb-3">
+                <span class="text-muted-custom block">Bathrooms</span>
+                <span id="spec-baths" class="font-semibold text-ink text-sm mt-0.5 block">3 Baths</span>
+              </div>
+              <div class="border-b border-hairline pb-3">
+                <span class="text-muted-custom block">Furnishing Status</span>
+                <span id="spec-furnishing" class="font-semibold text-ink text-sm mt-0.5 block">Semi-Furnished</span>
+              </div>
+              <div class="border-b border-hairline pb-3">
+                <span class="text-muted-custom block">Floor Configuration</span>
+                <span id="spec-floor" class="font-semibold text-ink text-sm mt-0.5 block">2nd of 4 Floors</span>
+              </div>
+              <div class="border-b border-hairline pb-3">
+                <span class="text-muted-custom block">Facing Direction</span>
+                <span id="spec-facing" class="font-semibold text-ink text-sm mt-0.5 block">North-East</span>
+              </div>
+              <div class="border-b border-hairline pb-3">
+                <span class="text-muted-custom block">Dedicated Parking</span>
+                <span id="spec-parking" class="font-semibold text-ink text-sm mt-0.5 block">1 Covered Car Parking</span>
+              </div>
+              <div class="border-b border-hairline pb-3">
+                <span class="text-muted-custom block">Age of Property</span>
+                <span id="spec-age" class="font-semibold text-ink text-sm mt-0.5 block">Brand New (0-1 Years)</span>
+              </div>
+              <div class="border-b border-hairline pb-3">
+                <span class="text-muted-custom block">Status / Title</span>
+                <span class="font-semibold text-emerald-700 text-sm mt-0.5 block">Clear Title &amp; Registry</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Description Section -->
+          <div class="bg-canvas border border-hairline rounded-xl p-6 sm:p-8 scroll-reveal">
+            <h3 class="font-display text-2xl text-ink font-semibold mb-4">About This Property</h3>
+            <p id="prop-desc" class="text-sm text-body leading-relaxed whitespace-pre-line"></p>
+          </div>
+
+          <!-- Amenities Grid -->
+          <div class="bg-surface-card border border-hairline rounded-xl p-6 sm:p-8 scroll-reveal">
+            <h3 class="font-display text-2xl text-ink font-semibold mb-6">Key Amenities &amp; Features</h3>
+            <div id="prop-amenities-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+              <!-- Injected by JS -->
+            </div>
+          </div>
+
+          <!-- EMI & Loan Calculator (Only for Buy) -->
+          <div id="emi-calculator-card" class="bg-canvas border border-hairline rounded-xl p-6 sm:p-8 scroll-reveal">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="font-display text-2xl text-ink font-semibold">Home Loan EMI Estimate</h3>
+              <span class="badge-pill bg-emerald-50 text-emerald-700 border border-emerald-200">Bank Assistance</span>
+            </div>
+            <p class="text-xs text-muted-custom mb-6">Estimate your monthly mortgage with our partner banks (SBI, HDFC, ICICI, PNB).</p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
+              <div>
+                <label class="block text-muted-custom mb-1">Loan Amount (₹)</label>
+                <input type="number" id="calc-amount" value="5000000" class="form-input text-xs" oninput="calculateEMI()">
+              </div>
+              <div>
+                <label class="block text-muted-custom mb-1">Interest Rate (%)</label>
+                <input type="number" id="calc-rate" step="0.1" value="8.5" class="form-input text-xs" oninput="calculateEMI()">
+              </div>
+              <div>
+                <label class="block text-muted-custom mb-1">Tenure (Years)</label>
+                <input type="number" id="calc-tenure" value="20" class="form-input text-xs" oninput="calculateEMI()">
+              </div>
+            </div>
+
+            <div class="mt-6 p-4 rounded-lg bg-surface-card border border-hairline flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div>
+                <span class="text-xs text-muted-custom">Estimated Monthly EMI</span>
+                <div id="calc-emi-display" class="font-display text-2xl font-bold text-coral">₹43,391 / month</div>
+              </div>
+              <a href="contact.html?subject=Home%20Loan%20Inquiry" class="btn-primary text-xs py-2 px-4 text-center">
+                Apply for Loan
+              </a>
+            </div>
+          </div>
+
+          <!-- Location & Connectivity Context -->
+          <div class="bg-surface-card border border-hairline rounded-xl p-6 sm:p-8 scroll-reveal">
+            <h3 class="font-display text-2xl text-ink font-semibold mb-4">Location &amp; Neighborhood</h3>
+            <p class="text-xs text-body leading-relaxed mb-6">
+              Located strategically in Jaitpur, South Delhi, offering seamless road connectivity to Kalindi Kunj, Noida Sector 18, Sarita Vihar, and Mohan Estate Industrial Area.
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+              <div class="p-3 bg-canvas border border-hairline rounded-lg flex items-center gap-3">
+                <span class="text-coral text-lg">🚇</span>
+                <div>
+                  <strong>Mohan Estate Metro (Violet Line)</strong>
+                  <p class="text-muted-custom text-[11px]">~7 mins via E-Rickshaw / Auto</p>
+                </div>
+              </div>
+              <div class="p-3 bg-canvas border border-hairline rounded-lg flex items-center gap-3">
+                <span class="text-coral text-lg">🏥</span>
+                <div>
+                  <strong>Apollo Hospital &amp; Holy Family</strong>
+                  <p class="text-muted-custom text-[11px]">~15 mins drive via Mathura Rd</p>
+                </div>
+              </div>
+              <div class="p-3 bg-canvas border border-hairline rounded-lg flex items-center gap-3">
+                <span class="text-coral text-lg">🛍️</span>
+                <div>
+                  <strong>Jaitpur Main Market &amp; Supermarkets</strong>
+                  <p class="text-muted-custom text-[11px]">Walking distance (2 mins)</p>
+                </div>
+              </div>
+              <div class="p-3 bg-canvas border border-hairline rounded-lg flex items-center gap-3">
+                <span class="text-coral text-lg">🏫</span>
+                <div>
+                  <strong>Reputed Schools &amp; Daycare</strong>
+                  <p class="text-muted-custom text-[11px]">Within 1 km radius</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Similar Properties in Jaitpur -->
+      <div class="border-t border-hairline pt-12 scroll-reveal">
+        <div class="flex items-center justify-between mb-8">
+          <div>
+            <span class="badge-pill mb-1">Recommended</span>
+            <h2 class="display-md text-ink">Similar Properties in Jaitpur</h2>
+          </div>
+          <a href="buy.html" class="btn-secondary text-xs">View All</a>
+        </div>
+        <div id="similar-properties-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Injected via JS -->
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-surface-dark text-on-dark-soft border-t border-stone-800 pt-16 pb-12 mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-stone-800">
+        <div class="lg:col-span-2 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="bg-white/95 p-1 rounded-lg inline-block shadow-sm">
+              <img src="images/logo.jpeg" alt="OurHomeIndia Logo" class="h-8 w-auto object-contain">
+            </div>
+            <div class="flex flex-col">
+              <span class="font-display text-2xl font-semibold text-white leading-tight">OurHome<span class="text-coral">India</span></span>
+              <span class="text-[10px] tracking-wider uppercase text-stone-400 font-mono -mt-0.5">Jaitpur • New Delhi</span>
+            </div>
+          </div>
+          <p class="text-xs text-on-dark-soft leading-relaxed max-w-sm">
+            Jaitpur and South Delhi's premier property advisory firm. Freehold titles, verified registry, and seamless financing.
+          </p>
+        </div>
+        <div>
+          <h4 class="text-xs uppercase tracking-wider text-white font-semibold mb-4">Properties</h4>
+          <ul class="space-y-2.5 text-xs">
+            <li><a href="buy.html" class="hover:text-coral transition-colors">Properties for Sale</a></li>
+            <li><a href="rent.html" class="hover:text-coral transition-colors">Properties for Rent</a></li>
+            <li><a href="post-property.html" class="hover:text-coral transition-colors">Post Free Listing</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-xs uppercase tracking-wider text-white font-semibold mb-4">Quick Links</h4>
+          <ul class="space-y-2.5 text-xs">
+            <li><a href="about.html" class="hover:text-coral transition-colors">About OurHomeIndia</a></li>
+            <li><a href="contact.html" class="hover:text-coral transition-colors">Contact Our Advisors</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-xs uppercase tracking-wider text-white font-semibold mb-4">Contact Office</h4>
+          <p class="text-xs text-stone-300">contact@ourhomeindia.com</p>
+          <p class="text-xs text-stone-300 mt-1">+91 98100 45678</p>
+          <p class="text-xs text-stone-400 mt-2">New Delhi, India</p>
+        </div>
+      </div>
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-500">
+        <p>&copy; 2026 OurHomeIndia. All rights reserved. Jaitpur, New Delhi, India &bull; Powered by <a href="https://mrnothing.in" target="_blank" rel="noopener noreferrer" class="text-coral hover:underline font-medium">Mr Nothing</a></p>
+        <div class="flex gap-4">
+          <a href="#" class="hover:text-coral">Privacy Policy</a>
+          <a href="#" class="hover:text-coral">Terms of Service</a>
+          <a href="contact.html" class="hover:text-coral">contact@ourhomeindia.com</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP -->
+  <a id="floating-wa-link" href="https://wa.me/919810045678" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+  </a>
+
+  <!-- SCRIPTS -->
+  <script src="js/properties-data.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    let currentProp = null;
+
+    function populatePropertyDetail() {
+      const params = new URLSearchParams(window.location.search);
+      const propId = params.get("id") || "prop-101";
+      currentProp = getPropertyById(propId);
+
+      document.title = `${currentProp.title} | OurHomeIndia`;
+
+      const purposeLink = document.getElementById("breadcrumb-purpose-link");
+      purposeLink.textContent = currentProp.purpose === "buy" ? "Properties for Sale" : "Rental Properties";
+      purposeLink.href = currentProp.purpose === "buy" ? "buy.html" : "rent.html";
+      document.getElementById("breadcrumb-title").textContent = currentProp.title;
+
+      document.getElementById("prop-purpose-badge").textContent = currentProp.purpose === "buy" ? "For Sale" : "For Rent";
+      document.getElementById("prop-type-badge").textContent = currentProp.propertyType;
+      document.getElementById("prop-title").textContent = currentProp.title;
+      document.getElementById("prop-address").querySelector("span").textContent = `${currentProp.address}`;
+      document.getElementById("prop-price").textContent = currentProp.priceDisplay;
+      document.getElementById("prop-price-sub").textContent = currentProp.pricePerSqFt || currentProp.securityDeposit || "";
+
+      const mainImg = document.getElementById("main-gallery-img");
+      mainImg.src = currentProp.images[0];
+
+      const thumbGrid = document.getElementById("gallery-thumbnails");
+      thumbGrid.innerHTML = currentProp.images.map((img, idx) => `
+        <button onclick="setMainImage('${img}')" class="aspect-[16/10] rounded-lg overflow-hidden border border-hairline focus:border-coral focus:ring-2 focus:ring-coral/20">
+          <img src="${img}" alt="Thumbnail ${idx+1}" class="w-full h-full object-cover">
+        </button>
+      `).join('');
+
+      if (currentProp.agent) {
+        document.getElementById("agent-name").textContent = currentProp.agent.name;
+        document.getElementById("agent-role").textContent = currentProp.agent.role;
+      }
+
+      document.getElementById("spec-bhk").textContent = currentProp.bedrooms > 0 ? `${currentProp.bedrooms} BHK` : 'Commercial / Studio';
+      document.getElementById("spec-area").textContent = `${currentProp.areaSqFt} sq.ft`;
+      document.getElementById("spec-baths").textContent = `${currentProp.bathrooms} Baths`;
+      document.getElementById("spec-furnishing").textContent = currentProp.furnishing;
+      document.getElementById("spec-floor").textContent = currentProp.floor;
+      document.getElementById("spec-facing").textContent = currentProp.facing;
+      document.getElementById("spec-parking").textContent = currentProp.parking;
+      document.getElementById("spec-age").textContent = currentProp.ageOfProperty;
+
+      document.getElementById("prop-desc").textContent = currentProp.description;
+
+      const amenitiesGrid = document.getElementById("prop-amenities-grid");
+      amenitiesGrid.innerHTML = currentProp.amenities.map(amenity => `
+        <div class="flex items-center gap-2 p-2.5 bg-canvas border border-hairline rounded-lg">
+          <svg class="w-4 h-4 text-coral shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+          <span class="text-body-strong">${amenity}</span>
+        </div>
+      `).join('');
+
+      const waMsg = encodeURIComponent(`Hello OurHomeIndia, I want to enquire about "${currentProp.title}" (ID: ${currentProp.id}) priced at ${currentProp.priceDisplay}.`);
+      const waUrl = `https://wa.me/919810045678?text=${waMsg}`;
+      document.getElementById("prop-whatsapp-btn").href = waUrl;
+      document.getElementById("floating-wa-link").href = waUrl;
+
+      if (currentProp.purpose === "rent") {
+        document.getElementById("emi-calculator-card").classList.add("hidden");
+      } else {
+        document.getElementById("calc-amount").value = Math.round(currentProp.price * 0.8);
+        calculateEMI();
+      }
+
+      const similar = getAllProperties().filter(p => p.id !== currentProp.id && p.purpose === currentProp.purpose).slice(0, 3);
+      document.getElementById("similar-properties-grid").innerHTML = similar.map((p, idx) => createPropertyCardHTML(p, `delay-${(idx + 1) * 100}`)).join('');
+      initScrollReveal();
+    }
+
+    function setMainImage(url) {
+      const mainImg = document.getElementById("main-gallery-img");
+      mainImg.style.opacity = "0.6";
+      mainImg.src = url;
+      setTimeout(() => { mainImg.style.opacity = "1"; }, 150);
+    }
+
+    function calculateEMI() {
+      const P = parseFloat(document.getElementById("calc-amount").value) || 0;
+      const annualRate = parseFloat(document.getElementById("calc-rate").value) || 8.5;
+      const tenureYears = parseFloat(document.getElementById("calc-tenure").value) || 20;
+
+      const r = (annualRate / 12) / 100;
+      const n = tenureYears * 12;
+
+      if (P > 0 && r > 0 && n > 0) {
+        const emi = (P * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+        document.getElementById("calc-emi-display").textContent = `₹${Math.round(emi).toLocaleString('en-IN')} / month`;
+      }
+    }
+
+    function handleLeadFormSubmit(e) {
+      e.preventDefault();
+      const form = e.target;
+      const name = form.lead_name.value;
+      const phone = form.lead_phone.value;
+      showToast(`Site visit request sent for ${currentProp.title}! Our team will contact ${phone} shortly.`);
+      form.reset();
+    }
+
+    document.addEventListener("DOMContentLoaded", populatePropertyDetail);
+  </script>
+</body>
+</html>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | OurHomeIndia - Verified Real Estate in India</title>
+  <meta name="description" content="Learn about OurHomeIndia's mission to bring transparency, legal verification, and trusted property services to home buyers and tenants across India.">
+  <link rel="icon" type="image/jpeg" href="images/logo.jpeg">
+  <link rel="apple-touch-icon" href="images/logo.jpeg">
+  <meta property="og:image" content="images/logo.jpeg">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Custom Design Tokens Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-canvas text-body-default min-h-screen flex flex-col antialiased selection:bg-[#cc785c] selection:text-white">
+
+  <!-- Header / Navigation Bar -->
+  <header class="top-nav">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2.5 text-ink group">
+        <img src="images/logo.jpeg" alt="OurHomeIndia Logo" class="h-9 sm:h-10 w-auto object-contain rounded-md transition-transform duration-200 group-hover:scale-105">
+        <div class="flex flex-col">
+          <span class="font-display text-2xl font-semibold tracking-tight text-ink leading-tight">OurHome<span class="text-coral">India</span></span>
+          <span class="text-[10px] tracking-wider uppercase text-muted-custom font-mono -mt-0.5">Verified Properties • India</span>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-body-strong">
+        <a href="index.html" class="hover:text-coral transition-colors">Home</a>
+        <a href="buy.html" class="hover:text-coral transition-colors">Buy</a>
+        <a href="rent.html" class="hover:text-coral transition-colors">Rent</a>
+        <a href="about.html" class="text-coral font-semibold">About Us</a>
+        <a href="contact.html" class="hover:text-coral transition-colors">Contact</a>
+      </nav>
+
+      <div class="hidden sm:flex items-center gap-3">
+        <a href="post-property.html" class="btn-secondary text-xs">Post Property</a>
+        <a href="contact.html" class="btn-primary text-xs">Enquire Now</a>
+      </div>
+
+      <!-- Animated Hamburger Button (Mobile) -->
+      <button id="mobile-menu-btn" class="hamburger-btn md:hidden" aria-label="Toggle navigation menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Backdrop Overlay -->
+  <div id="mobile-overlay" class="mobile-overlay md:hidden"></div>
+
+  <!-- Slide-Over Mobile Navigation Panel -->
+  <div id="mobile-panel" class="mobile-panel md:hidden">
+    <div class="flex items-center justify-between pb-5 border-b border-hairline">
+      <div class="flex items-center gap-2">
+        <img src="images/logo.jpeg" alt="OurHomeIndia Logo" class="h-8 w-auto object-contain rounded-md">
+        <div class="flex flex-col">
+          <span class="font-display text-xl font-semibold text-ink leading-tight">OurHome<span class="text-coral">India</span></span>
+          <span class="text-[9px] tracking-wider uppercase text-muted-custom font-mono">Verified Properties • India</span>
+        </div>
+      </div>
+      <button id="mobile-drawer-close" class="p-2 text-muted-custom hover:text-ink rounded-lg hover:bg-surface-card" aria-label="Close Menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+    </div>
+
+    <div class="flex flex-col py-6 space-y-1">
+      <a href="index.html" class="mobile-nav-link">Home <span>&rarr;</span></a>
+      <a href="buy.html" class="mobile-nav-link">Buy Properties <span>&rarr;</span></a>
+      <a href="rent.html" class="mobile-nav-link">Rent Properties <span>&rarr;</span></a>
+      <a href="about.html" class="mobile-nav-link active">About Us <span>&rarr;</span></a>
+      <a href="contact.html" class="mobile-nav-link">Contact Us <span>&rarr;</span></a>
+    </div>
+
+    <div class="mt-auto space-y-3 pt-6 border-t border-hairline">
+      <a href="post-property.html" class="btn-secondary w-full justify-center py-3 text-xs">
+        <svg class="w-4 h-4 text-coral" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+        Post Property Free
+      </a>
+      <a href="contact.html" class="btn-primary w-full justify-center py-3 text-xs">
+        Talk to Property Advisor
+      </a>
+      <div class="text-center pt-2 text-[11px] text-muted-custom font-mono">
+        New Delhi, India • contact@ourhomeindia.com
+      </div>
+    </div>
+  </div>
+
+  <main class="flex-1">
+
+    <!-- Hero Header -->
+    <section class="py-16 sm:py-24 border-b border-hairline bg-canvas">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl space-y-4 scroll-reveal">
+          <span class="badge-coral">Our Story &amp; Vision</span>
+          <h1 class="display-lg text-ink">
+            Building Trust in Indian Real Estate, One Home at a Time.
+          </h1>
+          <p class="text-base sm:text-lg text-body leading-relaxed">
+            Founded with a clear vision: to eliminate ambiguities in property transactions across India, providing home buyers, tenants, and investors with 100% physically verified listings, ethical pricing, and complete legal transparency.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Philosophy & Alternating Surface -->
+    <section class="py-16 sm:py-20 bg-surface-soft border-b border-hairline">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          <div class="lg:col-span-6 space-y-6 scroll-reveal">
+            <span class="badge-pill">The Platform</span>
+            <h2 class="display-md text-ink">Modern Real Estate Discovery Built on Trust</h2>
+            <p class="text-sm text-body leading-relaxed">
+              Real estate in India is evolving at breakneck speed. From high-growth urban corridors in Delhi NCR and metropolitan hubs to emerging tier-1 cities, finding quality residential and commercial spaces should be empowering, not exhausting.
+            </p>
+            <p class="text-sm text-body leading-relaxed">
+              <strong>OurHomeIndia</strong> solves the traditional pain points of the Indian property market — fake photos, unregistered brokers, hidden brokerage fees, and uncertain title deeds. We conduct physical audits, cross-verify municipal registry papers, and partner with top banks before featuring properties.
+            </p>
+            <div class="grid grid-cols-2 gap-4 pt-2">
+              <div class="bg-canvas p-4 rounded-xl border border-hairline shadow-sm">
+                <span class="font-display text-3xl font-bold text-coral">2,500+</span>
+                <p class="text-xs text-muted-custom mt-1">Families Settled</p>
+              </div>
+              <div class="bg-canvas p-4 rounded-xl border border-hairline shadow-sm">
+                <span class="font-display text-3xl font-bold text-coral">100%</span>
+                <p class="text-xs text-muted-custom mt-1">Legal Due Diligence</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-6 scroll-reveal delay-200">
+            <div class="product-mockup-card-dark p-8 space-y-6 shadow-xl">
+              <span class="badge-pill bg-stone-800 text-amber-400 text-xs">Our 4 Core Pillars</span>
+              
+              <div class="space-y-4 text-xs">
+                <div class="flex items-start gap-3">
+                  <span class="w-6 h-6 rounded-full bg-coral/20 text-coral flex items-center justify-center font-bold shrink-0 mt-0.5">1</span>
+                  <div>
+                    <strong class="text-white text-sm block mb-0.5">Transparent Pricing &amp; Zero Hidden Fees</strong>
+                    <p class="text-on-dark-soft">All prices, deposits, and terms are clearly stated upfront without eleventh-hour surprises.</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <span class="w-6 h-6 rounded-full bg-coral/20 text-coral flex items-center justify-center font-bold shrink-0 mt-0.5">2</span>
+                  <div>
+                    <strong class="text-white text-sm block mb-0.5">Thorough Legal Title Examination</strong>
+                    <p class="text-on-dark-soft">Every registry, title chain, and sanction plan is reviewed by our legal advisors.</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <span class="w-6 h-6 rounded-full bg-coral/20 text-coral flex items-center justify-center font-bold shrink-0 mt-0.5">3</span>
+                  <div>
+                    <strong class="text-white text-sm block mb-0.5">Pan-India Bank Loan Facilitation</strong>
+                    <p class="text-on-dark-soft">Direct partnerships with major lenders (SBI, HDFC, ICICI, PNB) ensure hassle-free loan approvals.</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <span class="w-6 h-6 rounded-full bg-coral/20 text-coral flex items-center justify-center font-bold shrink-0 mt-0.5">4</span>
+                  <div>
+                    <strong class="text-white text-sm block mb-0.5">End-to-End Handover Support</strong>
+                    <p class="text-on-dark-soft">We assist with utility transfers, meter readings, e-stamped rent agreements, and key handover.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Advisory Team / Leadership -->
+    <section class="py-16 sm:py-24 bg-canvas border-b border-hairline">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-16 scroll-reveal">
+          <span class="badge-pill mb-2">The Leadership</span>
+          <h2 class="display-lg text-ink">Meet Our Property Advisors</h2>
+          <p class="text-sm text-muted-custom mt-2">Seasoned real estate specialists with deep expertise across residential and commercial sectors.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          <div class="feature-card text-center flex flex-col items-center scroll-reveal delay-100">
+            <div class="w-20 h-20 rounded-full bg-stone-900 text-white font-display text-2xl font-bold flex items-center justify-center mb-4 border-2 border-coral shadow-sm">
+              MV
+            </div>
+            <h3 class="font-display text-xl text-ink font-semibold">Mohit Verma</h3>
+            <p class="text-xs text-coral font-medium mb-3">Senior Property Advisor &amp; Co-Founder</p>
+            <p class="text-xs text-muted-custom leading-relaxed">
+              Specialist in freehold builder floors, luxury kothis, and developer land titles with over 14 years of Indian real estate experience.
+            </p>
+          </div>
+
+          <div class="feature-card text-center flex flex-col items-center scroll-reveal delay-200">
+            <div class="w-20 h-20 rounded-full bg-stone-900 text-white font-display text-2xl font-bold flex items-center justify-center mb-4 border-2 border-amber-400 shadow-sm">
+              SS
+            </div>
+            <h3 class="font-display text-xl text-ink font-semibold">Sunil Sharma</h3>
+            <p class="text-xs text-coral font-medium mb-3">Residential Leasing &amp; Tenant Relations</p>
+            <p class="text-xs text-muted-custom leading-relaxed">
+              Guiding families and working executives toward verified, hassle-free rental flats with legally binding e-stamped agreements.
+            </p>
+          </div>
+
+          <div class="feature-card text-center flex flex-col items-center scroll-reveal delay-300">
+            <div class="w-20 h-20 rounded-full bg-stone-900 text-white font-display text-2xl font-bold flex items-center justify-center mb-4 border-2 border-teal-400 shadow-sm">
+              RR
+            </div>
+            <h3 class="font-display text-xl text-ink font-semibold">Rajesh Rawat</h3>
+            <p class="text-xs text-coral font-medium mb-3">Commercial Assets &amp; Retail Investments</p>
+            <p class="text-xs text-muted-custom leading-relaxed">
+              Advising retail shop owners, corporate brands, and high-net-worth investors on prime high-footfall commercial spaces.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Coral Callout Band -->
+    <section class="py-16 sm:py-20 bg-canvas">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="callout-card-coral flex flex-col md:flex-row items-center justify-between gap-8 scroll-reveal">
+          <div class="space-y-3">
+            <h2 class="display-md text-white">Have a Property Query or Need Advisory?</h2>
+            <p class="text-white/90 text-sm max-w-xl">
+              Connect directly with our property advisors for free consultation and verified property tours.
+            </p>
+          </div>
+          <a href="contact.html" class="btn-secondary bg-white text-ink text-xs px-6 py-3 shrink-0 font-semibold shadow-md text-center w-full md:w-auto">
+            Get in Touch
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-surface-dark text-on-dark-soft border-t border-stone-800 pt-16 pb-12 mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-stone-800">
+        <div class="lg:col-span-2 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="bg-white/95 p-1 rounded-lg inline-block shadow-sm">
+              <img src="images/logo.jpeg" alt="OurHomeIndia Logo" class="h-8 w-auto object-contain">
+            </div>
+            <div class="flex flex-col">
+              <span class="font-display text-2xl font-semibold text-white leading-tight">OurHome<span class="text-coral">India</span></span>
+              <span class="text-[10px] tracking-wider uppercase text-stone-400 font-mono -mt-0.5">Verified Properties • India</span>
+            </div>
+          </div>
+          <p class="text-xs text-on-dark-soft leading-relaxed max-w-sm">
+            Ethical, transparent, and verified property services across India.
+          </p>
+        </div>
+        <div>
+          <h4 class="text-xs uppercase tracking-wider text-white font-semibold mb-4">Properties</h4>
+          <ul class="space-y-2.5 text-xs">
+            <li><a href="buy.html" class="hover:text-coral transition-colors">Buy Property</a></li>
+            <li><a href="rent.html" class="hover:text-coral transition-colors">Rent Property</a></li>
+            <li><a href="post-property.html" class="hover:text-coral transition-colors">Post Listing Free</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-xs uppercase tracking-wider text-white font-semibold mb-4">Company</h4>
+          <ul class="space-y-2.5 text-xs">
+            <li><a href="about.html" class="hover:text-coral transition-colors">About Us</a></li>
+            <li><a href="contact.html" class="hover:text-coral transition-colors">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-xs uppercase tracking-wider text-white font-semibold mb-4">Contact Info</h4>
+          <p class="text-xs text-stone-300">contact@ourhomeindia.com</p>
+          <p class="text-xs text-stone-300 mt-1">+91 98100 45678</p>
+          <p class="text-xs text-stone-400 mt-2">New Delhi, India</p>
+        </div>
+      </div>
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-500">
+        <p>&copy; 2026 OurHomeIndia. All rights reserved. New Delhi, India &bull; Powered by <a href="https://mrnothing.in" target="_blank" rel="noopener noreferrer" class="text-coral hover:underline font-medium">Mr Nothing</a></p>
+        <div class="flex gap-4">
+          <a href="#" class="hover:text-coral">Privacy Policy</a>
+          <a href="#" class="hover:text-coral">Terms of Service</a>
+          <a href="contact.html" class="hover:text-coral">contact@ourhomeindia.com</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP -->
+  <a href="https://wa.me/919810045678?text=Hello%2C%20I%20would%20like%20to%20know%20more%20about%20OurHomeIndia%20services." target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+  </a>
+
+  <!-- SCRIPTS -->
+  <script src="js/properties-data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

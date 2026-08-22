@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rent Flats & Apartments in India | OurHomeIndia</title>
+  <meta name="description" content="Find verified 1 BHK, 2 BHK, and 3 BHK rental flats, builder floors, luxury apartments, and commercial leasing across India with OurHomeIndia.">
+  <link rel="icon" type="image/jpeg" href="images/logo.jpeg">
+  <link rel="apple-touch-icon" href="images/logo.jpeg">
+  <meta property="og:image" content="images/logo.jpeg">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Custom Design Tokens Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-canvas text-body-default min-h-screen flex flex-col antialiased selection:bg-[#cc785c] selection:text-white">
+
+  <!-- Header / Navigation Bar -->
+  <header class="top-nav">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2.5 text-ink group">
+        <img src="images/logo.jpeg" alt="OurHomeIndia Logo" class="h-9 sm:h-10 w-auto object-contain rounded-md transition-transform duration-200 group-hover:scale-105">
+        <div class="flex flex-col">
+          <span class="font-display text-2xl font-semibold tracking-tight text-ink leading-tight">OurHome<span class="text-coral">India</span></span>
+          <span class="text-[10px] tracking-wider uppercase text-muted-custom font-mono -mt-0.5">Verified Properties • India</span>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-body-strong">
+        <a href="index.html" class="hover:text-coral transition-colors">Home</a>
+        <a href="buy.html" class="hover:text-coral transition-colors">Buy</a>
+        <a href="rent.html" class="text-coral font-semibold">Rent</a>
+        <a href="about.html" class="hover:text-coral transition-colors">About Us</a>
+        <a href="contact.html" class="hover:text-coral transition-colors">Contact</a>
+      </nav>
+
+      <div class="hidden sm:flex items-center gap-3">
+        <a href="post-property.html" class="btn-secondary text-xs">
+          <svg class="w-4 h-4 text-coral" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+          Post Property
+        </a>
+        <a href="contact.html" class="btn-primary text-xs">Enquire Now</a>
+      </div>
+
+      <!-- Animated Hamburger Button (Mobile) -->
+      <button id="mobile-menu-btn" class="hamburger-btn md:hidden" aria-label="Toggle navigation menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Backdrop Overlay -->
+  <div id="mobile-overlay" class="mobile-overlay md:hidden"></div>
+
+  <!-- Slide-Over Mobile Navigation Panel -->
+  <div id="mobile-panel" class="mobile-panel md:hidden">
+    <div class="flex items-center justify-between pb-5 border-b border-hairline">
+      <div class="flex items-center gap-2">
+        <img src="images/logo.jpeg" alt="OurHomeIndia Logo" class="h-8 w-auto object-contain rounded-md">
+        <div class="flex flex-col">
+          <span class="font-display text-xl font-semibold text-ink leading-tight">OurHome<span class="text-coral">India</span></span>
+          <span class="text-[9px] tracking-wider uppercase text-muted-custom font-mono">Verified Properties • India</span>
+        </div>
+      </div>
+      <button id="mobile-drawer-close" class="p-2 text-muted-custom hover:text-ink rounded-lg hover:bg-surface-card" aria-label="Close Menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+    </div>
+
+    <div class="flex flex-col py-6 space-y-1">
+      <a href="index.html" class="mobile-nav-link">Home <span>&rarr;</span></a>
+      <a href="buy.html" class="mobile-nav-link">Buy Properties <span>&rarr;</span></a>
+      <a href="rent.html" class="mobile-nav-link active">Rent Properties <span>&rarr;</span></a>
+      <a href="about.html" class="mobile-nav-link">About Us <span>&rarr;</span></a>
+      <a href="contact.html" class="mobile-nav-link">Contact Us <span>&rarr;</span></a>
+    </div>
+
+    <div class="mt-auto space-y-3 pt-6 border-t border-hairline">
+      <a href="post-property.html" class="btn-secondary w-full justify-center py-3 text-xs">
+        <svg class="w-4 h-4 text-coral" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+        Post Property Free
+      </a>
+      <a href="contact.html" class="btn-primary w-full justify-center py-3 text-xs">
+        Talk to Property Advisor
+      </a>
+      <div class="text-center pt-2 text-[11px] text-muted-custom font-mono">
+        New Delhi, India • contact@ourhomeindia.com
+      </div>
+    </div>
+  </div>
+
+  <main class="flex-1 py-10 sm:py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Page Header -->
+      <div class="mb-8 scroll-reveal">
+        <div class="flex items-center gap-2 text-xs text-muted-custom mb-2">
+          <a href="index.html" class="hover:text-coral">Home</a>
+          <span>/</span>
+          <span class="text-body-strong font-medium">Rental Properties</span>
+        </div>
+        <h1 class="display-lg text-ink">Rental Properties Across India</h1>
+        <p class="text-sm text-muted-custom mt-1">Verified family apartments, executive studio suites, and commercial offices with transparent rental agreements.</p>
+      </div>
+
+      <!-- Filter Console Card -->
+      <div class="bg-surface-card border border-hairline rounded-xl p-5 mb-10 shadow-sm scroll-reveal delay-100">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
+          
+          <div>
+            <label class="block text-xs font-medium text-body-strong mb-1">Keywords</label>
+            <input type="text" id="filter-rent-search" placeholder="e.g. metro, parking, semi-furnished..." class="form-input text-xs">
+          </div>
+
+          <div>
+            <label class="block text-xs font-medium text-body-strong mb-1">City / Region</label>
+            <select id="filter-rent-locality" class="form-input text-xs">
+              <option value="all">All Locations</option>
+              <option value="Noida">Noida / Expressway</option>
+              <option value="Gurugram">Gurugram / Cyber City</option>
+              <option value="Jasola">Jasola Vihar / South Delhi</option>
+              <option value="Jaitpur">Jaitpur Main Road</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs font-medium text-body-strong mb-1">BHK Configuration</label>
+            <select id="filter-rent-bhk" class="form-input text-xs">
+              <option value="all">All BHKs</option>
+              <option value="1">1 BHK / Studio</option>
+              <option value="2">2 BHK Flat</option>
+              <option value="3">3 BHK Flat</option>
+              <option value="0">Commercial Unit</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs font-medium text-body-strong mb-1">Furnishing</label>
+            <select id="filter-rent-furnishing" class="form-input text-xs">
+              <option value="all">Any Furnishing</option>
+              <option value="Furnished">Fully Furnished</option>
+              <option value="Semi-Furnished">Semi-Furnished</option>
+              <option value="Unfurnished">Unfurnished</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs font-medium text-body-strong mb-1">Max Monthly Rent</label>
+            <select id="filter-rent-budget" class="form-input text-xs">
+              <option value="all">Any Rent Budget</option>
+              <option value="20000">Up to ₹20,000 / mo</option>
+              <option value="35000">Up to ₹35,000 / mo</option>
+              <option value="70000">Up to ₹70,000 / mo</option>
+            </select>
+          </div>
+
+        </div>
+
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pt-4 mt-4 border-t border-hairline text-xs">
+          <div id="rent-results-count" class="text-body-strong font-medium">
+            Showing properties...
+          </div>
+          <button type="button" onclick="resetRentFilters()" class="text-coral underline hover:text-ink font-medium text-left sm:text-right">
+            Reset All Filters
+          </button>
+        </div>
+      </div>
+
+      <!-- Properties Grid -->
+      <div id="rent-properties-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <!-- Injected via JavaScript -->
+      </div>
+
+      <!-- Empty State -->
+      <div id="rent-empty-state" class="hidden bg-surface-card border border-hairline rounded-xl p-12 text-center max-w-lg mx-auto my-8 animate-fadeIn">
+        <div class="w-12 h-12 rounded-full bg-stone-200 flex items-center justify-center mx-auto text-stone-600 mb-4">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+        </div>
+        <h3 class="font-display text-xl text-ink font-semibold">No Rental Listings Found</h3>
+        <p class="text-xs text-muted-custom mt-2 mb-4">Please modify your budget or area filter, or call our rental advisors for instant unlisted inventory.</p>
+        <button onclick="resetRentFilters()" class="btn-primary text-xs">Reset Filters</button>
+      </div>
+
+      <!-- Tenant Services Banner -->
+      <div class="mt-16 bg-surface-soft border border-hairline rounded-xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 scroll-reveal">
+        <div class="space-y-2">
+          <span class="badge-pill">Tenant Assistance</span>
+          <h3 class="font-display text-2xl text-ink">Need a Registered Rent Agreement &amp; Police Verification?</h3>
+          <p class="text-xs sm:text-sm text-muted-custom">OurHomeIndia handles complete 11-month e-stamped rental agreements, tenant police verification forms, and utility meter checks.</p>
+        </div>
+        <a href="contact.html" class="btn-primary text-xs shrink-0 py-3 px-6 w-full sm:w-auto text-center">
+          Contact Rental Desk
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-surface-dark text-on-dark-soft border-t border-stone-800 pt-16 pb-12 mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-stone-800">
+        <div class="lg:col-span-2 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="bg-white/95 p-1 rounded-lg inline-block shadow-sm">
+              <img src="images/logo.jpeg" alt="OurHomeIndia Logo" class="h-8 w-auto object-contain">
+            </div>
+            <div class="flex flex-col">
+              <span class="font-display text-2xl font-semibold text-white leading-tight">OurHome<span class="text-coral">India</span></span>
+              <span class="text-[10px] tracking-wider uppercase text-stone-400 font-mono -mt-0.5">Verified Properties • India</span>
+            </div>
+          </div>
+          <p class="text-xs text-on-dark-soft leading-relaxed max-w-sm">
+            India's trusted rental real estate discovery partner. Transparent terms, zero hidden charges.
+          </p>
+        </div>
+        <div>
+          <h4 class="text-xs uppercase tracking-wider text-white font-semibold mb-4">Properties</h4>
+          <ul class="space-y-2.5 text-xs">
+            <li><a href="rent.html" class="hover:text-coral transition-colors">1 BHK &amp; Studio Flats</a></li>
+            <li><a href="rent.html" class="hover:text-coral transition-colors">2 BHK Apartments</a></li>
+            <li><a href="rent.html" class="hover:text-coral transition-colors">3 BHK Family Homes</a></li>
+            <li><a href="post-property.html" class="hover:text-coral transition-colors">Rent Your Property</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-xs uppercase tracking-wider text-white font-semibold mb-4">Company</h4>
+          <ul class="space-y-2.5 text-xs">
+            <li><a href="about.html" class="hover:text-coral transition-colors">About Us</a></li>
+            <li><a href="contact.html" class="hover:text-coral transition-colors">Contact Office</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-xs uppercase tracking-wider text-white font-semibold mb-4">Direct Contact</h4>
+          <p class="text-xs text-stone-300">contact@ourhomeindia.com</p>
+          <p class="text-xs text-stone-300 mt-1">+91 98111 87654</p>
+          <p class="text-xs text-stone-400 mt-2">New Delhi, India</p>
+        </div>
+      </div>
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-500">
+        <p>&copy; 2026 OurHomeIndia. All rights reserved. New Delhi, India &bull; Powered by <a href="https://mrnothing.in" target="_blank" rel="noopener noreferrer" class="text-coral hover:underline font-medium">Mr Nothing</a></p>
+        <div class="flex gap-4">
+          <a href="#" class="hover:text-coral">Privacy Policy</a>
+          <a href="#" class="hover:text-coral">Terms of Service</a>
+          <a href="contact.html" class="hover:text-coral">contact@ourhomeindia.com</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP -->
+  <a href="https://wa.me/919811187654?text=Hello%2C%20I%20am%20looking%20to%20rent%20a%20property%20through%20OurHomeIndia." target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+  </a>
+
+  <!-- SCRIPTS -->
+  <script src="js/properties-data.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    function renderRentListings() {
+      const searchVal = document.getElementById("filter-rent-search").value.toLowerCase().trim();
+      const localityVal = document.getElementById("filter-rent-locality").value;
+      const bhkVal = document.getElementById("filter-rent-bhk").value;
+      const furnishingVal = document.getElementById("filter-rent-furnishing").value;
+      const budgetVal = document.getElementById("filter-rent-budget").value;
+
+      let list = getRentProperties();
+
+      if (searchVal) {
+        list = list.filter(p => 
+          p.title.toLowerCase().includes(searchVal) ||
+          p.description.toLowerCase().includes(searchVal) ||
+          p.locality.toLowerCase().includes(searchVal) ||
+          p.city.toLowerCase().includes(searchVal) ||
+          p.furnishing.toLowerCase().includes(searchVal)
+        );
+      }
+
+      if (localityVal !== 'all') {
+        list = list.filter(p => 
+          p.locality.toLowerCase().includes(localityVal.toLowerCase()) ||
+          p.city.toLowerCase().includes(localityVal.toLowerCase())
+        );
+      }
+
+      if (bhkVal !== 'all') {
+        const bhkNum = parseInt(bhkVal, 10);
+        list = list.filter(p => p.bedrooms === bhkNum);
+      }
+
+      if (furnishingVal !== 'all') {
+        list = list.filter(p => p.furnishing.toLowerCase().includes(furnishingVal.toLowerCase()));
+      }
+
+      if (budgetVal !== 'all') {
+        const maxRent = parseInt(budgetVal, 10);
+        list = list.filter(p => p.price <= maxRent);
+      }
+
+      const grid = document.getElementById("rent-properties-grid");
+      const empty = document.getElementById("rent-empty-state");
+      const count = document.getElementById("rent-results-count");
+
+      count.textContent = `Showing ${list.length} verified rental propert${list.length === 1 ? 'y' : 'ies'}`;
+
+      if (list.length === 0) {
+        grid.innerHTML = "";
+        empty.classList.remove("hidden");
+      } else {
+        empty.classList.add("hidden");
+        grid.innerHTML = list.map((p, idx) => createPropertyCardHTML(p, `delay-${(idx % 3 + 1) * 100}`)).join('');
+        initScrollReveal();
+      }
+    }
+
+    function resetRentFilters() {
+      document.getElementById("filter-rent-search").value = "";
+      document.getElementById("filter-rent-locality").value = "all";
+      document.getElementById("filter-rent-bhk").value = "all";
+      document.getElementById("filter-rent-furnishing").value = "all";
+      document.getElementById("filter-rent-budget").value = "all";
+      renderRentListings();
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      ["filter-rent-search", "filter-rent-locality", "filter-rent-bhk", "filter-rent-furnishing", "filter-rent-budget"].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.addEventListener("input", renderRentListings);
+          el.addEventListener("change", renderRentListings);
+        }
+      });
+      renderRentListings();
+    });
+  </script>
+</body>
+</html>
