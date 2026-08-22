@@ -22,22 +22,18 @@
   <header class="top-nav">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between">
       
-      <!-- Brand Logo -->
-      <a href="index.html" class="flex items-center gap-2.5 text-ink group">
-        <img src="images/logo.jpeg" alt="OurHomeIndia Logo" class="h-9 sm:h-10 w-auto object-contain rounded-md transition-transform duration-200 group-hover:scale-105">
-        <div class="flex flex-col">
-          <span class="font-display text-2xl font-semibold tracking-tight text-ink leading-tight">OurHome<span class="text-coral">India</span></span>
-          <span class="text-[10px] tracking-wider uppercase text-muted-custom font-mono -mt-0.5">Verified Properties • India</span>
-        </div>
+      <!-- Clean Brand Identity (Single Unified Logo Image) -->
+      <a href="index.html" class="flex items-center group navbar-brand">
+        <img src="images/logo.jpeg" alt="OurHomeIndia Real Estate" class="h-9 sm:h-11 w-auto object-contain rounded-md transition-transform duration-200 group-hover:scale-102">
       </a>
 
-      <!-- Desktop Navigation Links -->
+      <!-- Desktop Navigation Links with Active State Indicator -->
       <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-body-strong">
-        <a href="index.html" class="text-coral font-semibold">Home</a>
-        <a href="buy.html" class="hover:text-coral transition-colors">Buy</a>
-        <a href="rent.html" class="hover:text-coral transition-colors">Rent</a>
-        <a href="about.html" class="hover:text-coral transition-colors">About Us</a>
-        <a href="contact.html" class="hover:text-coral transition-colors">Contact</a>
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="buy.html" class="nav-link hover:text-coral transition-colors">Buy</a>
+        <a href="rent.html" class="nav-link hover:text-coral transition-colors">Rent</a>
+        <a href="about.html" class="nav-link hover:text-coral transition-colors">About Us</a>
+        <a href="contact.html" class="nav-link hover:text-coral transition-colors">Contact</a>
       </nav>
 
       <!-- CTA Actions -->
@@ -51,7 +47,7 @@
         </a>
       </div>
 
-      <!-- Animated Hamburger Button (Mobile) -->
+      <!-- Animated Hamburger Button (Mobile - min 44x44px touch target) -->
       <button id="mobile-menu-btn" class="hamburger-btn md:hidden" aria-label="Toggle navigation menu" aria-expanded="false">
         <span class="hamburger-line"></span>
         <span class="hamburger-line"></span>
@@ -66,14 +62,10 @@
   <!-- Slide-Over Mobile Navigation Panel -->
   <div id="mobile-panel" class="mobile-panel md:hidden">
     <div class="flex items-center justify-between pb-5 border-b border-hairline">
-      <div class="flex items-center gap-2">
+      <a href="index.html" class="flex items-center">
         <img src="images/logo.jpeg" alt="OurHomeIndia Logo" class="h-8 w-auto object-contain rounded-md">
-        <div class="flex flex-col">
-          <span class="font-display text-xl font-semibold text-ink leading-tight">OurHome<span class="text-coral">India</span></span>
-          <span class="text-[9px] tracking-wider uppercase text-muted-custom font-mono">Verified Properties • India</span>
-        </div>
-      </div>
-      <button id="mobile-drawer-close" class="p-2 text-muted-custom hover:text-ink rounded-lg hover:bg-surface-card" aria-label="Close Menu">
+      </a>
+      <button id="mobile-drawer-close" class="drawer-close-btn text-muted-custom hover:text-ink hover:bg-surface-card" aria-label="Close Menu">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
       </button>
     </div>
@@ -95,14 +87,14 @@
         Talk to Property Advisor
       </a>
       <div class="text-center pt-2 text-[11px] text-muted-custom font-mono">
-        New Delhi, India • contact@ourhomeindia.com
+        <a href="mailto:contact@ourhomeindia.com" class="hover:text-coral">contact@ourhomeindia.com</a>
       </div>
     </div>
   </div>
 
   <main class="flex-1">
 
-    <!-- HERO SECTION (Editorial Warm Canvas + 6/6 Split Rhythm) -->
+    <!-- HERO SECTION (Editorial Warm Canvas + Stacked Responsive Badges) -->
     <section class="py-12 lg:py-20 border-b border-hairline bg-canvas relative overflow-hidden">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
@@ -111,9 +103,10 @@
           <!-- Left Column: Editorial Headline & Search -->
           <div class="lg:col-span-7 space-y-6 scroll-reveal">
             
-            <div class="inline-flex items-center gap-2">
-              <span class="badge-coral">India's Trusted Property Platform</span>
-              <span class="text-xs text-muted-custom font-medium">1,200+ Verified Homes, Builder Floors &amp; Commercial Spaces</span>
+            <!-- Stack badges on small screens to prevent awkward wrapping -->
+            <div class="flex flex-col sm:flex-row sm:items-center gap-2">
+              <span class="badge-coral self-start">India's Trusted Property Platform</span>
+              <span class="text-xs text-muted-custom font-medium">1,200+ Verified Homes &amp; Commercial Units</span>
             </div>
 
             <h1 class="display-xl text-ink">
@@ -125,7 +118,7 @@
             </p>
 
             <!-- Search Console Card -->
-            <div class="bg-surface-card border border-hairline rounded-xl p-5 sm:p-6 shadow-sm">
+            <div class="bg-surface-card border border-hairline-strong rounded-xl p-5 sm:p-6 shadow-sm">
               
               <!-- Purpose Tabs (Buy / Rent) -->
               <div class="flex items-center gap-2 pb-4 mb-4 border-b border-hairline">
@@ -137,7 +130,7 @@
                 </button>
               </div>
 
-              <!-- Search Filters Grid -->
+              <!-- Search Filters Grid with elevated border contrast -->
               <form id="hero-search-form" onsubmit="handleHeroSearch(event)" class="space-y-4">
                 <input type="hidden" id="hero-search-purpose" value="buy">
 
@@ -145,7 +138,7 @@
                   <!-- City / Location Selector -->
                   <div>
                     <label class="block text-xs font-medium text-body-strong mb-1">City / Region</label>
-                    <select id="hero-locality" class="form-input text-xs">
+                    <select id="hero-locality" class="form-input text-xs font-medium">
                       <option value="all">All Locations (Delhi NCR &amp; India)</option>
                       <option value="South Delhi">South Delhi / GK / Sarita Vihar</option>
                       <option value="Noida">Noida / Expressway</option>
@@ -158,7 +151,7 @@
                   <!-- Property Type -->
                   <div>
                     <label class="block text-xs font-medium text-body-strong mb-1">Property Type</label>
-                    <select id="hero-type" class="form-input text-xs">
+                    <select id="hero-type" class="form-input text-xs font-medium">
                       <option value="all">All Property Types</option>
                       <option value="Builder Floor">Builder Floor</option>
                       <option value="Apartment">Apartment / High-Rise Flat</option>
@@ -170,7 +163,7 @@
                   <!-- Budget -->
                   <div>
                     <label class="block text-xs font-medium text-body-strong mb-1">Budget Range</label>
-                    <select id="hero-budget" class="form-input text-xs">
+                    <select id="hero-budget" class="form-input text-xs font-medium">
                       <option value="all">Any Budget</option>
                       <option value="under-25k">Under ₹25,000 / mo (Rent)</option>
                       <option value="under-50L">Under ₹50 Lakhs (Buy)</option>
@@ -231,8 +224,8 @@
                   <p class="font-display text-lg text-white font-semibold mt-0.5">1,200+</p>
                 </div>
                 <div class="bg-surface-dark-elevated p-2.5 rounded-lg border border-stone-800">
-                  <p class="text-stone-400 text-[11px]">Cities Covered</p>
-                  <p class="font-display text-lg text-white font-semibold mt-0.5">Delhi NCR &amp; Pan-India</p>
+                  <p class="text-stone-400 text-[11px]">Coverage</p>
+                  <p class="font-display text-lg text-white font-semibold mt-0.5">Delhi NCR &amp; India</p>
                 </div>
                 <div class="bg-surface-dark-elevated p-2.5 rounded-lg border border-stone-800">
                   <p class="text-stone-400 text-[11px]">Happy Families</p>
@@ -473,40 +466,36 @@
   </main>
 
 
-  <!-- FOOTER (Dark Navy #181715) -->
+  <!-- FOOTER (Dark Navy with responsive collapsible/stacked layout) -->
   <footer class="bg-surface-dark text-on-dark-soft border-t border-stone-800 pt-16 pb-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-stone-800">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-10 pb-12 border-b border-stone-800">
         
         <!-- Brand & Bio -->
-        <div class="lg:col-span-2 space-y-4">
-          <div class="flex items-center gap-3">
-            <div class="bg-white/95 p-1 rounded-lg inline-block shadow-sm">
+        <div class="sm:col-span-2 space-y-4">
+          <a href="index.html" class="flex items-center">
+            <div class="bg-white/95 p-1.5 rounded-lg inline-block shadow-sm">
               <img src="images/logo.jpeg" alt="OurHomeIndia Logo" class="h-8 w-auto object-contain">
             </div>
-            <div class="flex flex-col">
-              <span class="font-display text-2xl font-semibold text-white leading-tight">OurHome<span class="text-coral">India</span></span>
-              <span class="text-[10px] tracking-wider uppercase text-stone-400 font-mono -mt-0.5">Verified Properties • India</span>
-            </div>
-          </div>
+          </a>
 
           <p class="text-xs text-on-dark-soft leading-relaxed max-w-sm">
             OurHomeIndia is a premier pan-India real estate discovery and listing platform. Delivering trusted guidance on buying, selling, and renting verified residential and commercial properties.
           </p>
 
-          <div class="text-xs space-y-1.5 pt-2 text-stone-300">
-            <p class="flex items-center gap-2">
-              <svg class="w-4 h-4 text-coral" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path></svg>
-              Corporate Office: Jaitpur Main Road, New Delhi 110044, India
+          <div class="text-xs space-y-2 pt-2 text-stone-300">
+            <p class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-coral shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path></svg>
+              <span>Corporate Office: Jaitpur Main Road, New Delhi 110044, India</span>
             </p>
             <p class="flex items-center gap-2">
-              <svg class="w-4 h-4 text-coral" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-              contact@ourhomeindia.com
+              <svg class="w-4 h-4 text-coral shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+              <a href="mailto:contact@ourhomeindia.com" class="hover:text-coral transition-colors">contact@ourhomeindia.com</a>
             </p>
             <p class="flex items-center gap-2">
-              <svg class="w-4 h-4 text-coral" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
-              +91 98100 45678 / +91 98111 87654
+              <svg class="w-4 h-4 text-coral shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+              <a href="tel:+919810045678" class="hover:text-coral transition-colors">+91 98100 45678</a> / <a href="tel:+919811187654" class="hover:text-coral transition-colors">+91 98111 87654</a>
             </p>
           </div>
         </div>
@@ -535,7 +524,7 @@
         </div>
 
         <!-- Newsletter Signup -->
-        <div>
+        <div class="sm:col-span-2 lg:col-span-1">
           <h4 class="text-xs uppercase tracking-wider text-white font-semibold mb-4">Property Alerts</h4>
           <p class="text-xs text-on-dark-soft mb-3">Get new verified listings across top cities delivered directly to your email.</p>
           
@@ -567,7 +556,7 @@
     </div>
   </footer>
 
-  <!-- FLOATING WHATSAPP BUTTON -->
+  <!-- FLOATING WHATSAPP BUTTON (With explicit safe margins) -->
   <a 
     href="https://wa.me/919810045678?text=Hello%20OurHomeIndia%2C%20I%20am%20interested%20in%20verified%20properties%20in%20India." 
     target="_blank" 

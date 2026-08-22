@@ -19,20 +19,16 @@
   <!-- Header / Navigation Bar -->
   <header class="top-nav">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between">
-      <a href="index.html" class="flex items-center gap-2.5 text-ink group">
-        <img src="images/logo.jpeg" alt="OurHomeIndia Logo" class="h-9 sm:h-10 w-auto object-contain rounded-md transition-transform duration-200 group-hover:scale-105">
-        <div class="flex flex-col">
-          <span class="font-display text-2xl font-semibold tracking-tight text-ink leading-tight">OurHome<span class="text-coral">India</span></span>
-          <span class="text-[10px] tracking-wider uppercase text-muted-custom font-mono -mt-0.5">Verified Properties • India</span>
-        </div>
+      <a href="index.html" class="flex items-center group navbar-brand">
+        <img src="images/logo.jpeg" alt="OurHomeIndia Real Estate" class="h-9 sm:h-11 w-auto object-contain rounded-md transition-transform duration-200 group-hover:scale-102">
       </a>
 
       <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-body-strong">
-        <a href="index.html" class="hover:text-coral transition-colors">Home</a>
-        <a href="buy.html" class="hover:text-coral transition-colors">Buy</a>
-        <a href="rent.html" class="text-coral font-semibold">Rent</a>
-        <a href="about.html" class="hover:text-coral transition-colors">About Us</a>
-        <a href="contact.html" class="hover:text-coral transition-colors">Contact</a>
+        <a href="index.html" class="nav-link hover:text-coral transition-colors">Home</a>
+        <a href="buy.html" class="nav-link hover:text-coral transition-colors">Buy</a>
+        <a href="rent.html" class="nav-link active">Rent</a>
+        <a href="about.html" class="nav-link hover:text-coral transition-colors">About Us</a>
+        <a href="contact.html" class="nav-link hover:text-coral transition-colors">Contact</a>
       </nav>
 
       <div class="hidden sm:flex items-center gap-3">
@@ -58,14 +54,10 @@
   <!-- Slide-Over Mobile Navigation Panel -->
   <div id="mobile-panel" class="mobile-panel md:hidden">
     <div class="flex items-center justify-between pb-5 border-b border-hairline">
-      <div class="flex items-center gap-2">
+      <a href="index.html" class="flex items-center">
         <img src="images/logo.jpeg" alt="OurHomeIndia Logo" class="h-8 w-auto object-contain rounded-md">
-        <div class="flex flex-col">
-          <span class="font-display text-xl font-semibold text-ink leading-tight">OurHome<span class="text-coral">India</span></span>
-          <span class="text-[9px] tracking-wider uppercase text-muted-custom font-mono">Verified Properties • India</span>
-        </div>
-      </div>
-      <button id="mobile-drawer-close" class="p-2 text-muted-custom hover:text-ink rounded-lg hover:bg-surface-card" aria-label="Close Menu">
+      </a>
+      <button id="mobile-drawer-close" class="drawer-close-btn text-muted-custom hover:text-ink hover:bg-surface-card" aria-label="Close Menu">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
       </button>
     </div>
@@ -87,12 +79,12 @@
         Talk to Property Advisor
       </a>
       <div class="text-center pt-2 text-[11px] text-muted-custom font-mono">
-        New Delhi, India • contact@ourhomeindia.com
+        <a href="mailto:contact@ourhomeindia.com" class="hover:text-coral">contact@ourhomeindia.com</a>
       </div>
     </div>
   </div>
 
-  <main class="flex-1 py-10 sm:py-16">
+  <main class="flex-1 py-8 sm:py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Page Header -->
@@ -106,8 +98,19 @@
         <p class="text-sm text-muted-custom mt-1">Verified family apartments, executive studio suites, and commercial offices with transparent rental agreements.</p>
       </div>
 
-      <!-- Filter Console Card -->
-      <div class="bg-surface-card border border-hairline rounded-xl p-5 mb-10 shadow-sm scroll-reveal delay-100">
+      <!-- Mobile Quick Filter Toggle -->
+      <div class="md:hidden mb-4 flex items-center justify-between bg-surface-card p-3 rounded-lg border border-hairline-strong">
+        <span class="text-xs font-semibold text-ink flex items-center gap-1.5">
+          <svg class="w-4 h-4 text-coral" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"></path></svg>
+          Search &amp; Filters
+        </span>
+        <button id="mobile-rent-filter-toggle" onclick="toggleMobileRentFilterBar()" class="btn-secondary text-xs py-1.5 px-3">
+          Toggle Filters
+        </button>
+      </div>
+
+      <!-- Filter Console Card with enhanced contrast -->
+      <div id="rent-filter-container" class="bg-surface-card border border-hairline-strong rounded-xl p-5 mb-10 shadow-sm scroll-reveal delay-100">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
           
           <div>
@@ -117,7 +120,7 @@
 
           <div>
             <label class="block text-xs font-medium text-body-strong mb-1">City / Region</label>
-            <select id="filter-rent-locality" class="form-input text-xs">
+            <select id="filter-rent-locality" class="form-input text-xs font-medium">
               <option value="all">All Locations</option>
               <option value="Noida">Noida / Expressway</option>
               <option value="Gurugram">Gurugram / Cyber City</option>
@@ -128,7 +131,7 @@
 
           <div>
             <label class="block text-xs font-medium text-body-strong mb-1">BHK Configuration</label>
-            <select id="filter-rent-bhk" class="form-input text-xs">
+            <select id="filter-rent-bhk" class="form-input text-xs font-medium">
               <option value="all">All BHKs</option>
               <option value="1">1 BHK / Studio</option>
               <option value="2">2 BHK Flat</option>
@@ -139,7 +142,7 @@
 
           <div>
             <label class="block text-xs font-medium text-body-strong mb-1">Furnishing</label>
-            <select id="filter-rent-furnishing" class="form-input text-xs">
+            <select id="filter-rent-furnishing" class="form-input text-xs font-medium">
               <option value="all">Any Furnishing</option>
               <option value="Furnished">Fully Furnished</option>
               <option value="Semi-Furnished">Semi-Furnished</option>
@@ -149,7 +152,7 @@
 
           <div>
             <label class="block text-xs font-medium text-body-strong mb-1">Max Monthly Rent</label>
-            <select id="filter-rent-budget" class="form-input text-xs">
+            <select id="filter-rent-budget" class="form-input text-xs font-medium">
               <option value="all">Any Rent Budget</option>
               <option value="20000">Up to ₹20,000 / mo</option>
               <option value="35000">Up to ₹35,000 / mo</option>
@@ -160,7 +163,7 @@
         </div>
 
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pt-4 mt-4 border-t border-hairline text-xs">
-          <div id="rent-results-count" class="text-body-strong font-medium">
+          <div id="rent-results-count" class="text-body-strong font-semibold">
             Showing properties...
           </div>
           <button type="button" onclick="resetRentFilters()" class="text-coral underline hover:text-ink font-medium text-left sm:text-right">
@@ -174,14 +177,17 @@
         <!-- Injected via JavaScript -->
       </div>
 
-      <!-- Empty State -->
-      <div id="rent-empty-state" class="hidden bg-surface-card border border-hairline rounded-xl p-12 text-center max-w-lg mx-auto my-8 animate-fadeIn">
-        <div class="w-12 h-12 rounded-full bg-stone-200 flex items-center justify-center mx-auto text-stone-600 mb-4">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+      <!-- Enhanced Empty State -->
+      <div id="rent-empty-state" class="hidden bg-surface-card border border-hairline-strong rounded-xl p-10 sm:p-14 text-center max-w-lg mx-auto my-8 animate-fadeIn shadow-sm">
+        <div class="w-14 h-14 rounded-full bg-stone-200/80 flex items-center justify-center mx-auto text-stone-600 mb-4">
+          <svg class="w-7 h-7 text-coral" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
         </div>
-        <h3 class="font-display text-xl text-ink font-semibold">No Rental Listings Found</h3>
-        <p class="text-xs text-muted-custom mt-2 mb-4">Please modify your budget or area filter, or call our rental advisors for instant unlisted inventory.</p>
-        <button onclick="resetRentFilters()" class="btn-primary text-xs">Reset Filters</button>
+        <h3 class="font-display text-2xl text-ink font-semibold">No Rental Listings Found</h3>
+        <p class="text-xs text-muted-custom mt-2 mb-6 leading-relaxed">Please modify your budget or area filter, or call our rental advisors for instant unlisted inventory.</p>
+        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+          <button onclick="resetRentFilters()" class="btn-primary text-xs py-2.5 px-6">Reset All Filters</button>
+          <a href="contact.html" class="btn-secondary text-xs py-2.5 px-6">Talk to Rental Desk</a>
+        </div>
       </div>
 
       <!-- Tenant Services Banner -->
@@ -202,20 +208,20 @@
   <!-- FOOTER -->
   <footer class="bg-surface-dark text-on-dark-soft border-t border-stone-800 pt-16 pb-12 mt-auto">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-stone-800">
-        <div class="lg:col-span-2 space-y-4">
-          <div class="flex items-center gap-3">
-            <div class="bg-white/95 p-1 rounded-lg inline-block shadow-sm">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-10 pb-12 border-b border-stone-800">
+        <div class="sm:col-span-2 space-y-4">
+          <a href="index.html" class="flex items-center">
+            <div class="bg-white/95 p-1.5 rounded-lg inline-block shadow-sm">
               <img src="images/logo.jpeg" alt="OurHomeIndia Logo" class="h-8 w-auto object-contain">
             </div>
-            <div class="flex flex-col">
-              <span class="font-display text-2xl font-semibold text-white leading-tight">OurHome<span class="text-coral">India</span></span>
-              <span class="text-[10px] tracking-wider uppercase text-stone-400 font-mono -mt-0.5">Verified Properties • India</span>
-            </div>
-          </div>
+          </a>
           <p class="text-xs text-on-dark-soft leading-relaxed max-w-sm">
             India's trusted rental real estate discovery partner. Transparent terms, zero hidden charges.
           </p>
+          <div class="text-xs space-y-1.5 text-stone-300 pt-1">
+            <p>Email: <a href="mailto:contact@ourhomeindia.com" class="hover:text-coral transition-colors">contact@ourhomeindia.com</a></p>
+            <p>Phone: <a href="tel:+919811187654" class="hover:text-coral transition-colors">+91 98111 87654</a></p>
+          </div>
         </div>
         <div>
           <h4 class="text-xs uppercase tracking-wider text-white font-semibold mb-4">Properties</h4>
@@ -235,8 +241,8 @@
         </div>
         <div>
           <h4 class="text-xs uppercase tracking-wider text-white font-semibold mb-4">Direct Contact</h4>
-          <p class="text-xs text-stone-300">contact@ourhomeindia.com</p>
-          <p class="text-xs text-stone-300 mt-1">+91 98111 87654</p>
+          <p class="text-xs text-stone-300"><a href="mailto:contact@ourhomeindia.com" class="hover:text-coral">contact@ourhomeindia.com</a></p>
+          <p class="text-xs text-stone-300 mt-1"><a href="tel:+919811187654" class="hover:text-coral">+91 98111 87654</a></p>
           <p class="text-xs text-stone-400 mt-2">New Delhi, India</p>
         </div>
       </div>
@@ -260,6 +266,13 @@
   <script src="js/properties-data.js"></script>
   <script src="js/main.js"></script>
   <script>
+    function toggleMobileRentFilterBar() {
+      const container = document.getElementById("rent-filter-container");
+      if (container) {
+        container.classList.toggle("hidden");
+      }
+    }
+
     function renderRentListings() {
       const searchVal = document.getElementById("filter-rent-search").value.toLowerCase().trim();
       const localityVal = document.getElementById("filter-rent-locality").value;

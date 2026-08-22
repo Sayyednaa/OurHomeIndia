@@ -19,20 +19,16 @@
   <!-- Header / Navigation Bar -->
   <header class="top-nav">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between">
-      <a href="index.html" class="flex items-center gap-2.5 text-ink group">
-        <img src="images/logo.jpeg" alt="OurHomeIndia Logo" class="h-9 sm:h-10 w-auto object-contain rounded-md transition-transform duration-200 group-hover:scale-105">
-        <div class="flex flex-col">
-          <span class="font-display text-2xl font-semibold tracking-tight text-ink leading-tight">OurHome<span class="text-coral">India</span></span>
-          <span class="text-[10px] tracking-wider uppercase text-muted-custom font-mono -mt-0.5">Verified Properties • India</span>
-        </div>
+      <a href="index.html" class="flex items-center group navbar-brand">
+        <img src="images/logo.jpeg" alt="OurHomeIndia Real Estate" class="h-9 sm:h-11 w-auto object-contain rounded-md transition-transform duration-200 group-hover:scale-102">
       </a>
 
       <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-body-strong">
-        <a href="index.html" class="hover:text-coral transition-colors">Home</a>
-        <a href="buy.html" class="hover:text-coral transition-colors">Buy</a>
-        <a href="rent.html" class="hover:text-coral transition-colors">Rent</a>
-        <a href="about.html" class="hover:text-coral transition-colors">About Us</a>
-        <a href="contact.html" class="hover:text-coral transition-colors">Contact</a>
+        <a href="index.html" class="nav-link hover:text-coral transition-colors">Home</a>
+        <a href="buy.html" class="nav-link hover:text-coral transition-colors">Buy</a>
+        <a href="rent.html" class="nav-link hover:text-coral transition-colors">Rent</a>
+        <a href="about.html" class="nav-link hover:text-coral transition-colors">About Us</a>
+        <a href="contact.html" class="nav-link hover:text-coral transition-colors">Contact</a>
       </nav>
 
       <div class="hidden sm:flex items-center gap-3">
@@ -57,14 +53,10 @@
   <!-- Slide-Over Mobile Navigation Panel -->
   <div id="mobile-panel" class="mobile-panel md:hidden">
     <div class="flex items-center justify-between pb-5 border-b border-hairline">
-      <div class="flex items-center gap-2">
+      <a href="index.html" class="flex items-center">
         <img src="images/logo.jpeg" alt="OurHomeIndia Logo" class="h-8 w-auto object-contain rounded-md">
-        <div class="flex flex-col">
-          <span class="font-display text-xl font-semibold text-ink leading-tight">OurHome<span class="text-coral">India</span></span>
-          <span class="text-[9px] tracking-wider uppercase text-muted-custom font-mono">Verified Properties • India</span>
-        </div>
-      </div>
-      <button id="mobile-drawer-close" class="p-2 text-muted-custom hover:text-ink rounded-lg hover:bg-surface-card" aria-label="Close Menu">
+      </a>
+      <button id="mobile-drawer-close" class="drawer-close-btn text-muted-custom hover:text-ink hover:bg-surface-card" aria-label="Close Menu">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
       </button>
     </div>
@@ -79,100 +71,108 @@
 
     <div class="mt-auto space-y-3 pt-6 border-t border-hairline">
       <a href="post-property.html" class="btn-primary w-full justify-center py-3 text-xs">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+        <svg class="w-4 h-4 fill-none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
         Post Property Free
       </a>
       <a href="contact.html" class="btn-secondary w-full justify-center py-3 text-xs">
         Talk to Property Advisor
       </a>
       <div class="text-center pt-2 text-[11px] text-muted-custom font-mono">
-        New Delhi, India • contact@ourhomeindia.com
+        <a href="mailto:contact@ourhomeindia.com" class="hover:text-coral">contact@ourhomeindia.com</a>
       </div>
     </div>
   </div>
 
   <main class="flex-1 py-10 sm:py-16">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Page Header -->
       <div class="mb-10 text-center max-w-2xl mx-auto scroll-reveal">
         <span class="badge-coral mb-2">Owner &amp; Builder Portal</span>
         <h1 class="display-lg text-ink">List Your Property Free</h1>
         <p class="text-xs sm:text-sm text-muted-custom mt-2">
-          Connect with genuine buyers and verified tenants across India. We audit listings, coordinate site tours, and help you close transactions faster.
+          Connect with genuine buyers and verified tenants across India. Complete our quick 3-step listing wizard.
         </p>
       </div>
 
-      <!-- Owner Benefits Banner -->
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10 text-xs">
-        <div class="bg-surface-card border border-hairline p-4 rounded-xl flex items-center gap-3 shadow-sm scroll-reveal delay-100">
-          <span class="text-coral text-xl font-bold">✓</span>
-          <div>
-            <strong class="text-ink block">Zero Listing Cost</strong>
-            <span class="text-muted-custom text-[11px]">Free listing &amp; digital marketing</span>
+      <!-- Step Wizard Progress Indicator -->
+      <div class="bg-surface-card border border-hairline-strong rounded-xl p-4 sm:p-5 mb-8 shadow-sm scroll-reveal">
+        <div class="flex items-center justify-between max-w-md mx-auto relative">
+          <div class="absolute left-4 right-4 top-1/2 -translate-y-1/2 h-0.5 bg-stone-300 z-0"></div>
+          
+          <div class="flex flex-col items-center relative z-10">
+            <div id="step-btn-1" class="step-indicator active">1</div>
+            <span class="text-[11px] font-semibold text-ink mt-1.5">Owner Info</span>
           </div>
-        </div>
-        <div class="bg-surface-card border border-hairline p-4 rounded-xl flex items-center gap-3 shadow-sm scroll-reveal delay-200">
-          <span class="text-coral text-xl font-bold">✓</span>
-          <div>
-            <strong class="text-ink block">Pre-Screened Leads</strong>
-            <span class="text-muted-custom text-[11px]">Only serious inquiries</span>
+
+          <div class="flex flex-col items-center relative z-10">
+            <div id="step-btn-2" class="step-indicator">2</div>
+            <span class="text-[11px] font-semibold text-muted-custom mt-1.5">Property Specs</span>
           </div>
-        </div>
-        <div class="bg-surface-card border border-hairline p-4 rounded-xl flex items-center gap-3 shadow-sm scroll-reveal delay-300">
-          <span class="text-coral text-xl font-bold">✓</span>
-          <div>
-            <strong class="text-ink block">End-to-End Documentation</strong>
-            <span class="text-muted-custom text-[11px]">E-stamped agreements &amp; registry</span>
+
+          <div class="flex flex-col items-center relative z-10">
+            <div id="step-btn-3" class="step-indicator">3</div>
+            <span class="text-[11px] font-semibold text-muted-custom mt-1.5">Location &amp; Highlights</span>
           </div>
         </div>
       </div>
 
-      <!-- Post Property Form -->
-      <div class="bg-canvas border border-hairline rounded-xl p-6 sm:p-10 shadow-sm scroll-reveal delay-200">
+      <!-- Post Property Form Card -->
+      <div class="bg-canvas border border-hairline-strong rounded-xl p-6 sm:p-10 shadow-sm scroll-reveal delay-100">
         
-        <form id="post-property-form" onsubmit="handlePostPropertySubmit(event)" class="space-y-8 text-xs">
+        <form id="post-property-form" onsubmit="handlePostPropertySubmit(event)" class="space-y-6 text-xs">
           
-          <!-- Section 1: Owner Details -->
-          <div>
-            <h3 class="font-display text-xl text-ink font-semibold border-b border-hairline pb-2 mb-4">
-              1. Owner &amp; Contact Details
-            </h3>
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <!-- Step 1: Owner Details -->
+          <div id="form-step-1" class="space-y-4">
+            <div class="border-b border-hairline pb-3">
+              <h3 class="font-display text-xl text-ink font-semibold">Step 1: Your Contact Information</h3>
+              <p class="text-[11px] text-muted-custom">We use this to verify ownership and coordinate interested buyers.</p>
+            </div>
+
+            <div>
+              <label class="block font-medium text-body-strong mb-1">Your Full Name *</label>
+              <input type="text" id="owner_name" name="owner_name" required placeholder="e.g. Anand Kumar" class="form-input text-xs">
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label class="block font-medium text-body-strong mb-1">Your Full Name *</label>
-                <input type="text" name="owner_name" required placeholder="e.g. Anand Kumar" class="form-input text-xs">
+                <label class="block font-medium text-body-strong mb-1">Phone Number (10 Digits) *</label>
+                <input type="tel" id="owner_phone" name="owner_phone" required placeholder="9876543210" pattern="[0-9]{10}" title="Enter 10-digit Indian mobile number" class="form-input text-xs">
               </div>
               <div>
-                <label class="block font-medium text-body-strong mb-1">Phone Number (WhatsApp) *</label>
-                <input type="tel" name="owner_phone" required placeholder="+91 98765 43210" class="form-input text-xs">
+                <label class="block font-medium text-body-strong mb-1">Email Address *</label>
+                <input type="email" id="owner_email" name="owner_email" required placeholder="anand@example.com" class="form-input text-xs">
               </div>
-              <div>
-                <label class="block font-medium text-body-strong mb-1">Email Address</label>
-                <input type="email" name="owner_email" placeholder="anand@example.com" class="form-input text-xs">
-              </div>
+            </div>
+
+            <div class="pt-4 flex justify-end">
+              <button type="button" onclick="goToStep(2)" class="btn-primary text-xs py-2.5 px-6">
+                Next: Property Specs &rarr;
+              </button>
             </div>
           </div>
 
-          <!-- Section 2: Property Basic Info -->
-          <div>
-            <h3 class="font-display text-xl text-ink font-semibold border-b border-hairline pb-2 mb-4">
-              2. Property Specifications
-            </h3>
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+          <!-- Step 2: Property Specifications -->
+          <div id="form-step-2" class="hidden space-y-4">
+            <div class="border-b border-hairline pb-3">
+              <h3 class="font-display text-xl text-ink font-semibold">Step 2: Property Specifications</h3>
+              <p class="text-[11px] text-muted-custom">Provide key dimensions, BHK layout, and expected pricing.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div>
-                <label class="block font-medium text-body-strong mb-1">Purpose *</label>
-                <select name="purpose" class="form-input text-xs" required>
+                <label class="block font-medium text-body-strong mb-1">Listing Purpose *</label>
+                <select id="purpose" name="purpose" class="form-input text-xs font-medium" required>
                   <option value="buy">I want to SELL</option>
                   <option value="rent">I want to RENT OUT</option>
                 </select>
               </div>
               <div>
                 <label class="block font-medium text-body-strong mb-1">Property Type *</label>
-                <select name="property_type" class="form-input text-xs" required>
+                <select id="property_type" name="property_type" class="form-input text-xs font-medium" required>
                   <option value="Builder Floor">Builder Floor</option>
                   <option value="Apartment">Apartment / High-Rise Flat</option>
-                  <option value="Independent House">Independent House / Villa / Kothi</option>
+                  <option value="Independent House">Independent Villa / Kothi</option>
                   <option value="Commercial Shop">Commercial Retail Shop</option>
                   <option value="Office Space">Commercial Office</option>
                   <option value="Plot / Land">Residential Plot / Land</option>
@@ -180,7 +180,7 @@
               </div>
               <div>
                 <label class="block font-medium text-body-strong mb-1">Bedrooms (BHK) *</label>
-                <select name="bedrooms" class="form-input text-xs" required>
+                <select id="bedrooms" name="bedrooms" class="form-input text-xs font-medium" required>
                   <option value="1">1 BHK</option>
                   <option value="2">2 BHK</option>
                   <option value="3" selected>3 BHK</option>
@@ -194,54 +194,68 @@
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div>
                 <label class="block font-medium text-body-strong mb-1">Super Area (sq.ft) *</label>
-                <input type="number" name="area_sqft" required placeholder="e.g. 1450" class="form-input text-xs">
+                <input type="number" id="area_sqft" name="area_sqft" required placeholder="e.g. 1450" class="form-input text-xs">
               </div>
               <div>
-                <label class="block font-medium text-body-strong mb-1">Expected Price / Monthly Rent (₹) *</label>
-                <input type="text" name="expected_price" required placeholder="e.g. 85 Lakhs or 28,000" class="form-input text-xs">
+                <label class="block font-medium text-body-strong mb-1">Expected Price / Rent (₹) *</label>
+                <input type="text" id="expected_price" name="expected_price" required placeholder="e.g. 85 Lakhs or 28,000" class="form-input text-xs">
               </div>
               <div>
                 <label class="block font-medium text-body-strong mb-1">Furnishing Status</label>
-                <select name="furnishing" class="form-input text-xs">
+                <select id="furnishing" name="furnishing" class="form-input text-xs font-medium">
                   <option value="Semi-Furnished">Semi-Furnished</option>
                   <option value="Unfurnished">Unfurnished</option>
                   <option value="Furnished">Fully Furnished</option>
                 </select>
               </div>
             </div>
+
+            <div class="pt-4 flex justify-between">
+              <button type="button" onclick="goToStep(1)" class="btn-secondary text-xs py-2.5 px-5">
+                &larr; Back
+              </button>
+              <button type="button" onclick="goToStep(3)" class="btn-primary text-xs py-2.5 px-6">
+                Next: Location &amp; Highlights &rarr;
+              </button>
+            </div>
           </div>
 
-          <!-- Section 3: Location & Details -->
-          <div>
-            <h3 class="font-display text-xl text-ink font-semibold border-b border-hairline pb-2 mb-4">
-              3. City, Locality &amp; Key Highlights
-            </h3>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+          <!-- Step 3: Location & Description -->
+          <div id="form-step-3" class="hidden space-y-4">
+            <div class="border-b border-hairline pb-3">
+              <h3 class="font-display text-xl text-ink font-semibold">Step 3: Location &amp; Highlights</h3>
+              <p class="text-[11px] text-muted-custom">Add locality specifics, amenities, and parking details.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label class="block font-medium text-body-strong mb-1">City &amp; Locality *</label>
-                <input type="text" name="locality" required placeholder="e.g. South Delhi, Noida Sector 137, Gurugram..." class="form-input text-xs">
+                <input type="text" id="locality" name="locality" required placeholder="e.g. South Delhi, Noida Sector 137, Gurugram" class="form-input text-xs">
               </div>
               <div>
-                <label class="block font-medium text-body-strong mb-1">Car Parking / Lift Available?</label>
-                <input type="text" name="parking_lift" placeholder="e.g. 1 Covered Parking + Automatic Lift" class="form-input text-xs">
+                <label class="block font-medium text-body-strong mb-1">Car Parking / Lift Facility</label>
+                <input type="text" id="parking_lift" name="parking_lift" placeholder="e.g. 1 Covered Parking + Lift" class="form-input text-xs">
               </div>
             </div>
 
             <div>
               <label class="block font-medium text-body-strong mb-1">Property Description &amp; Highlights</label>
-              <textarea name="description" rows="3" placeholder="Mention age of property, facing direction, nearby landmarks, modular kitchen, power backup..." class="form-input text-xs"></textarea>
+              <textarea id="description" name="description" rows="3" placeholder="Mention age of property, facing direction, modular kitchen, nearby landmarks..." class="form-input text-xs"></textarea>
             </div>
-          </div>
 
-          <div class="bg-surface-soft p-4 rounded-lg flex items-center gap-3 text-muted-custom">
-            <svg class="w-5 h-5 text-coral shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-            <span>Upon submission, your listing details will be sent directly to <strong>contact@ourhomeindia.com</strong>. Our property manager will contact you to confirm verification.</span>
-          </div>
+            <div class="bg-surface-soft p-4 rounded-lg flex items-center gap-3 text-muted-custom">
+              <svg class="w-5 h-5 text-coral shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              <span>Submissions are dispatched to <strong>contact@ourhomeindia.com</strong>. Our audit advisor will contact you to verify details.</span>
+            </div>
 
-          <div>
-            <button type="submit" class="btn-primary w-full py-3.5 text-sm font-semibold justify-center">
-              Submit Property Listing
-            </button>
+            <div class="pt-4 flex justify-between">
+              <button type="button" onclick="goToStep(2)" class="btn-secondary text-xs py-2.5 px-5">
+                &larr; Back
+              </button>
+              <button type="submit" class="btn-primary text-xs py-3 px-8 font-semibold">
+                Submit Property Listing
+              </button>
+            </div>
           </div>
 
         </form>
@@ -254,17 +268,13 @@
   <!-- FOOTER -->
   <footer class="bg-surface-dark text-on-dark-soft border-t border-stone-800 pt-16 pb-12 mt-auto">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-stone-800">
-        <div class="lg:col-span-2 space-y-4">
-          <div class="flex items-center gap-3">
-            <div class="bg-white/95 p-1 rounded-lg inline-block shadow-sm">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-10 pb-12 border-b border-stone-800">
+        <div class="sm:col-span-2 space-y-4">
+          <a href="index.html" class="flex items-center">
+            <div class="bg-white/95 p-1.5 rounded-lg inline-block shadow-sm">
               <img src="images/logo.jpeg" alt="OurHomeIndia Logo" class="h-8 w-auto object-contain">
             </div>
-            <div class="flex flex-col">
-              <span class="font-display text-2xl font-semibold text-white leading-tight">OurHome<span class="text-coral">India</span></span>
-              <span class="text-[10px] tracking-wider uppercase text-stone-400 font-mono -mt-0.5">Verified Properties • India</span>
-            </div>
-          </div>
+          </a>
           <p class="text-xs text-on-dark-soft leading-relaxed max-w-sm">
             India's premier real estate discovery and listing platform.
           </p>
@@ -286,8 +296,8 @@
         </div>
         <div>
           <h4 class="text-xs uppercase tracking-wider text-white font-semibold mb-4">Contact Info</h4>
-          <p class="text-xs text-stone-300">contact@ourhomeindia.com</p>
-          <p class="text-xs text-stone-300 mt-1">+91 98100 45678</p>
+          <p class="text-xs text-stone-300"><a href="mailto:contact@ourhomeindia.com" class="hover:text-coral">contact@ourhomeindia.com</a></p>
+          <p class="text-xs text-stone-300 mt-1"><a href="tel:+919810045678" class="hover:text-coral">+91 98100 45678</a></p>
           <p class="text-xs text-stone-400 mt-2">New Delhi, India</p>
         </div>
       </div>
@@ -311,6 +321,48 @@
   <script src="js/properties-data.js"></script>
   <script src="js/main.js"></script>
   <script>
+    function goToStep(step) {
+      // Validate step 1 if moving forward
+      if (step === 2) {
+        const name = document.getElementById("owner_name").value.trim();
+        const phone = document.getElementById("owner_phone").value.trim();
+        const email = document.getElementById("owner_email").value.trim();
+        if (!name || !phone || !email) {
+          showToast("Please fill in your Name, 10-digit Phone, and Email to proceed.", "warning");
+          return;
+        }
+        if (!/^[0-9]{10}$/.test(phone)) {
+          showToast("Please enter a valid 10-digit Indian phone number.", "warning");
+          return;
+        }
+      }
+
+      // Validate step 2 if moving forward
+      if (step === 3) {
+        const area = document.getElementById("area_sqft").value.trim();
+        const price = document.getElementById("expected_price").value.trim();
+        if (!area || !price) {
+          showToast("Please enter Super Area and Expected Price.", "warning");
+          return;
+        }
+      }
+
+      [1, 2, 3].forEach(s => {
+        const stepEl = document.getElementById(`form-step-${s}`);
+        const btnEl = document.getElementById(`step-btn-${s}`);
+        if (s === step) {
+          stepEl.classList.remove("hidden");
+          btnEl.className = "step-indicator active";
+        } else if (s < step) {
+          stepEl.classList.add("hidden");
+          btnEl.className = "step-indicator completed";
+        } else {
+          stepEl.classList.add("hidden");
+          btnEl.className = "step-indicator";
+        }
+      });
+    }
+
     function handlePostPropertySubmit(e) {
       e.preventDefault();
       const form = e.target;
@@ -321,6 +373,7 @@
 
       showToast(`Thank you, ${ownerName}! Your property for ${purpose} in ${locality} has been received. Our team will contact ${phone} to schedule verification.`);
       form.reset();
+      goToStep(1);
     }
   </script>
 </body>

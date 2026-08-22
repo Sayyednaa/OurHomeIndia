@@ -19,20 +19,16 @@
   <!-- Header / Navigation Bar -->
   <header class="top-nav">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between">
-      <a href="index.html" class="flex items-center gap-2.5 text-ink group">
-        <img src="images/logo.jpeg" alt="OurHomeIndia Logo" class="h-9 sm:h-10 w-auto object-contain rounded-md transition-transform duration-200 group-hover:scale-105">
-        <div class="flex flex-col">
-          <span class="font-display text-2xl font-semibold tracking-tight text-ink leading-tight">OurHome<span class="text-coral">India</span></span>
-          <span class="text-[10px] tracking-wider uppercase text-muted-custom font-mono -mt-0.5">Verified Properties • India</span>
-        </div>
+      <a href="index.html" class="flex items-center group navbar-brand">
+        <img src="images/logo.jpeg" alt="OurHomeIndia Real Estate" class="h-9 sm:h-11 w-auto object-contain rounded-md transition-transform duration-200 group-hover:scale-102">
       </a>
 
       <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-body-strong">
-        <a href="index.html" class="hover:text-coral transition-colors">Home</a>
-        <a href="buy.html" class="hover:text-coral transition-colors">Buy</a>
-        <a href="rent.html" class="hover:text-coral transition-colors">Rent</a>
-        <a href="about.html" class="hover:text-coral transition-colors">About Us</a>
-        <a href="contact.html" class="text-coral font-semibold">Contact</a>
+        <a href="index.html" class="nav-link hover:text-coral transition-colors">Home</a>
+        <a href="buy.html" class="nav-link hover:text-coral transition-colors">Buy</a>
+        <a href="rent.html" class="nav-link hover:text-coral transition-colors">Rent</a>
+        <a href="about.html" class="nav-link hover:text-coral transition-colors">About Us</a>
+        <a href="contact.html" class="nav-link active">Contact</a>
       </nav>
 
       <div class="hidden sm:flex items-center gap-3">
@@ -55,14 +51,10 @@
   <!-- Slide-Over Mobile Navigation Panel -->
   <div id="mobile-panel" class="mobile-panel md:hidden">
     <div class="flex items-center justify-between pb-5 border-b border-hairline">
-      <div class="flex items-center gap-2">
+      <a href="index.html" class="flex items-center">
         <img src="images/logo.jpeg" alt="OurHomeIndia Logo" class="h-8 w-auto object-contain rounded-md">
-        <div class="flex flex-col">
-          <span class="font-display text-xl font-semibold text-ink leading-tight">OurHome<span class="text-coral">India</span></span>
-          <span class="text-[9px] tracking-wider uppercase text-muted-custom font-mono">Verified Properties • India</span>
-        </div>
-      </div>
-      <button id="mobile-drawer-close" class="p-2 text-muted-custom hover:text-ink rounded-lg hover:bg-surface-card" aria-label="Close Menu">
+      </a>
+      <button id="mobile-drawer-close" class="drawer-close-btn text-muted-custom hover:text-ink hover:bg-surface-card" aria-label="Close Menu">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
       </button>
     </div>
@@ -84,7 +76,7 @@
         Talk to Property Advisor
       </a>
       <div class="text-center pt-2 text-[11px] text-muted-custom font-mono">
-        New Delhi, India • contact@ourhomeindia.com
+        <a href="mailto:contact@ourhomeindia.com" class="hover:text-coral">contact@ourhomeindia.com</a>
       </div>
     </div>
   </div>
@@ -111,7 +103,7 @@
         <!-- Contact Info & Address Cards (5 Cols) -->
         <div class="lg:col-span-5 space-y-6 scroll-reveal">
           
-          <div class="bg-surface-card border border-hairline rounded-xl p-6 sm:p-7 space-y-6 shadow-sm">
+          <div class="bg-surface-card border border-hairline-strong rounded-xl p-6 sm:p-7 space-y-6 shadow-sm">
             <h3 class="font-display text-2xl text-ink font-semibold">Office Information</h3>
             
             <div class="space-y-4 text-xs">
@@ -133,7 +125,9 @@
                 </div>
                 <div>
                   <strong class="text-ink text-sm block">Email Enquiries</strong>
-                  <p class="text-coral font-medium mt-0.5">contact@ourhomeindia.com</p>
+                  <p class="text-coral font-medium mt-0.5">
+                    <a href="mailto:contact@ourhomeindia.com" class="hover:underline">contact@ourhomeindia.com</a>
+                  </p>
                   <p class="text-muted-custom text-[11px]">Direct responses within 2 to 4 hours</p>
                 </div>
               </div>
@@ -144,8 +138,12 @@
                 </div>
                 <div>
                   <strong class="text-ink text-sm block">Phone &amp; WhatsApp</strong>
-                  <p class="text-body-strong font-semibold mt-0.5">+91 98100 45678 (Sales &amp; Investments)</p>
-                  <p class="text-body-strong font-semibold mt-0.5">+91 98111 87654 (Rentals &amp; Leases)</p>
+                  <p class="text-body-strong font-semibold mt-0.5">
+                    <a href="tel:+919810045678" class="hover:text-coral transition-colors">+91 98100 45678</a> (Sales &amp; Investments)
+                  </p>
+                  <p class="text-body-strong font-semibold mt-0.5">
+                    <a href="tel:+919811187654" class="hover:text-coral transition-colors">+91 98111 87654</a> (Rentals &amp; Leases)
+                  </p>
                 </div>
               </div>
 
@@ -194,7 +192,7 @@
 
         <!-- Contact & Inquiry Form (7 Cols) -->
         <div class="lg:col-span-7 scroll-reveal delay-200">
-          <div class="bg-canvas border border-hairline rounded-xl p-6 sm:p-8 shadow-sm">
+          <div class="bg-canvas border border-hairline-strong rounded-xl p-6 sm:p-8 shadow-sm">
             <span class="badge-pill mb-2">Send an Enquiry</span>
             <h2 class="display-md text-ink font-semibold mb-2">Write to OurHomeIndia</h2>
             <p class="text-xs text-muted-custom mb-6">Fill in your requirements below. All messages go directly to <strong>contact@ourhomeindia.com</strong>.</p>
@@ -206,8 +204,8 @@
                   <input type="text" name="name" required placeholder="e.g. Ramesh Kumar" class="form-input text-xs">
                 </div>
                 <div>
-                  <label class="block font-medium text-body-strong mb-1">Phone Number (WhatsApp) *</label>
-                  <input type="tel" name="phone" required placeholder="+91 98765 43210" class="form-input text-xs">
+                  <label class="block font-medium text-body-strong mb-1">Phone Number (10 Digits) *</label>
+                  <input type="tel" name="phone" required placeholder="9876543210" pattern="[0-9]{10}" title="Enter 10-digit mobile number" class="form-input text-xs">
                 </div>
               </div>
 
@@ -218,7 +216,7 @@
                 </div>
                 <div>
                   <label class="block font-medium text-body-strong mb-1">Inquiry Purpose</label>
-                  <select name="purpose" class="form-input text-xs">
+                  <select name="purpose" class="form-input text-xs font-medium">
                     <option value="buy">Looking to Buy (Builder Floor / Kothi / Apartment)</option>
                     <option value="rent">Looking to Rent (Flat / Commercial Unit)</option>
                     <option value="sell">Looking to Sell / List My Property</option>
@@ -300,17 +298,13 @@
   <!-- FOOTER -->
   <footer class="bg-surface-dark text-on-dark-soft border-t border-stone-800 pt-16 pb-12 mt-auto">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-stone-800">
-        <div class="lg:col-span-2 space-y-4">
-          <div class="flex items-center gap-3">
-            <div class="bg-white/95 p-1 rounded-lg inline-block shadow-sm">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-10 pb-12 border-b border-stone-800">
+        <div class="sm:col-span-2 space-y-4">
+          <a href="index.html" class="flex items-center">
+            <div class="bg-white/95 p-1.5 rounded-lg inline-block shadow-sm">
               <img src="images/logo.jpeg" alt="OurHomeIndia Logo" class="h-8 w-auto object-contain">
             </div>
-            <div class="flex flex-col">
-              <span class="font-display text-2xl font-semibold text-white leading-tight">OurHome<span class="text-coral">India</span></span>
-              <span class="text-[10px] tracking-wider uppercase text-stone-400 font-mono -mt-0.5">Verified Properties • India</span>
-            </div>
-          </div>
+          </a>
           <p class="text-xs text-on-dark-soft leading-relaxed max-w-sm">
             Pan-India verified real estate discovery and listing platform.
           </p>
@@ -332,8 +326,8 @@
         </div>
         <div>
           <h4 class="text-xs uppercase tracking-wider text-white font-semibold mb-4">Contact Info</h4>
-          <p class="text-xs text-stone-300">contact@ourhomeindia.com</p>
-          <p class="text-xs text-stone-300 mt-1">+91 98100 45678</p>
+          <p class="text-xs text-stone-300"><a href="mailto:contact@ourhomeindia.com" class="hover:text-coral">contact@ourhomeindia.com</a></p>
+          <p class="text-xs text-stone-300 mt-1"><a href="tel:+919810045678" class="hover:text-coral">+91 98100 45678</a></p>
           <p class="text-xs text-stone-400 mt-2">New Delhi, India</p>
         </div>
       </div>

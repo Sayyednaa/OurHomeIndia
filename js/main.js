@@ -1,7 +1,7 @@
 /**
- * OurHomeIndia - Main Application Script & Mobile Engine
- * Brand: OurHomeIndia | Location: Jaitpur, New Delhi, India
- * Email: contact@ourhomeindia.com
+ * OurHomeIndia - Main Application Script & Interactive Features
+ * Scope: Pan-India Verified Real Estate Platform
+ * contact@ourhomeindia.com
  */
 
 // Toast notification helper
@@ -122,11 +122,11 @@ function openEnquiryModal(propertyId) {
 
   modal.innerHTML = `
     <div class="bg-canvas border border-hairline rounded-xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative animate-fadeIn">
-      <button onclick="closeEnquiryModal()" class="absolute top-5 right-5 text-muted-custom hover:text-ink p-1 rounded-md hover:bg-surface-card transition-colors" aria-label="Close modal">
+      <button onclick="closeEnquiryModal()" class="drawer-close-btn absolute top-4 right-4 text-muted-custom hover:text-ink hover:bg-surface-card" aria-label="Close modal">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
       </button>
 
-      <div class="mb-5">
+      <div class="mb-5 pr-8">
         <span class="badge-pill mb-2">OurHomeIndia Advisory</span>
         <h3 class="font-display text-2xl text-ink">Schedule a Site Visit / Enquiry</h3>
         <p class="text-xs text-muted-custom mt-1">Property: <strong class="text-body-strong">${propTitle}</strong> ${propPrice ? `(${propPrice})` : ''}</p>
@@ -140,7 +140,7 @@ function openEnquiryModal(propertyId) {
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <div>
             <label class="block text-xs font-medium text-body-strong mb-1">Phone Number *</label>
-            <input type="tel" name="phone" required placeholder="+91 98765 43210" class="form-input text-sm">
+            <input type="tel" name="phone" required placeholder="10-digit mobile number" class="form-input text-sm" pattern="[0-9]{10}" title="Please enter a valid 10-digit mobile number">
           </div>
           <div>
             <label class="block text-xs font-medium text-body-strong mb-1">Email Address</label>
@@ -154,7 +154,7 @@ function openEnquiryModal(propertyId) {
 
         <div class="bg-surface-soft p-3 rounded-lg text-xs text-muted-custom flex items-center gap-2">
           <svg class="w-4 h-4 text-emerald-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-          <span>Direct enquiry dispatched to <strong>contact@ourhomeindia.com</strong>. No spam guarantee.</span>
+          <span>Direct enquiry dispatched to <strong>contact@ourhomeindia.com</strong>. Zero spam.</span>
         </div>
 
         <div class="flex gap-3 pt-2">
@@ -183,13 +183,12 @@ function handleQuickEnquirySubmit(e, propertyId) {
   const phone = form.phone.value;
 
   closeEnquiryModal();
-  showToast(`Thank you, ${name}! Your enquiry for property [${propertyId || 'General'}] has been sent to contact@ourhomeindia.com. Our Jaitpur team will contact you at ${phone} shortly.`);
+  showToast(`Thank you, ${name}! Your enquiry has been sent to contact@ourhomeindia.com. Our property advisor will call ${phone} shortly.`);
   form.reset();
 }
 
 /**
- * Robust Mobile Drawer Navigation Controller
- * Handles Hamburger toggles, backdrop animations, and scroll lock
+ * Mobile Drawer Navigation Controller
  */
 function initMobileNavigation() {
   const hamburgerBtns = document.querySelectorAll("#mobile-menu-btn, .hamburger-btn");
@@ -269,7 +268,6 @@ function initScrollReveal() {
 
     elements.forEach(el => observer.observe(el));
   } else {
-    // Fallback for older browsers
     elements.forEach(el => el.classList.add("is-visible"));
   }
 }
@@ -286,7 +284,7 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
       const emailInput = newsletterForm.querySelector('input[type="email"]');
       if (emailInput && emailInput.value) {
-        showToast(`Subscribed! Property alerts will be sent to ${emailInput.value}.`);
+        showToast(`Subscribed! Verified property updates will be sent to ${emailInput.value}.`);
         emailInput.value = "";
       }
     });
@@ -298,7 +296,7 @@ document.addEventListener("DOMContentLoaded", () => {
     generalContactForm.addEventListener("submit", (e) => {
       e.preventDefault();
       const name = generalContactForm.querySelector('[name="name"]')?.value || "Client";
-      showToast(`Thank you, ${name}! Your message has been sent to contact@ourhomeindia.com. We will respond within 2 hours.`);
+      showToast(`Thank you, ${name}! Your enquiry has been sent to contact@ourhomeindia.com. Our property advisor will connect with you within 2 hours.`);
       generalContactForm.reset();
     });
   }
