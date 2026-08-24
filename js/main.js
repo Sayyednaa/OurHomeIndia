@@ -235,6 +235,7 @@ function initMobileNavigation() {
     if (e.key === "Escape") {
       closeDrawer();
       closeEnquiryModal();
+      closeNoticeModal();
     }
   });
 
@@ -243,6 +244,125 @@ function initMobileNavigation() {
     panel.querySelectorAll("a").forEach(link => {
       link.addEventListener("click", closeDrawer);
     });
+  }
+}
+
+/**
+ * Platform Development & Sample Data Notice Banner & Modal
+ */
+function openNoticeModal() {
+  let modal = document.getElementById("dev-notice-modal");
+  if (!modal) {
+    modal = document.createElement("div");
+    modal.id = "dev-notice-modal";
+    modal.className = "fixed inset-0 z-50 flex items-center justify-center p-4 bg-stone-950/75 backdrop-blur-sm";
+    document.body.appendChild(modal);
+  }
+
+  modal.innerHTML = `
+    <div class="bg-canvas border border-hairline rounded-2xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative animate-fadeIn">
+      <button onclick="closeNoticeModal()" class="drawer-close-btn absolute top-4 right-4 text-muted-custom hover:text-ink hover:bg-surface-card" aria-label="Close notification">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+
+      <div class="flex items-center gap-2.5 mb-3">
+        <div class="w-9 h-9 rounded-full bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-600">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+        </div>
+        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-mono font-medium tracking-wide uppercase bg-amber-100 text-amber-900 border border-amber-200">
+          Under Development • Demo Preview
+        </span>
+      </div>
+
+      <h3 class="font-display text-2xl sm:text-3xl text-ink font-semibold tracking-tight mb-2">
+        Welcome to OurHome<span class="text-coral">India</span>
+      </h3>
+
+      <p class="text-sm text-body-strong leading-relaxed mb-4">
+        This platform is currently <strong>under active development and coming soon</strong>.
+      </p>
+
+      <div class="bg-surface-soft border border-hairline rounded-xl p-4 mb-5 text-xs text-body leading-relaxed space-y-2">
+        <div class="flex items-start gap-2 text-ink font-medium">
+          <svg class="w-4 h-4 text-coral shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          <span>Sample / Mock Data Notice:</span>
+        </div>
+        <p class="text-muted-custom pl-6">
+          All property listings, pricing figures, photos, specifications, floor plans, and seller profiles displayed on this website are <strong>strictly example & sample data</strong> for design and demonstration purposes. They do <strong>not</strong> represent real or active market transactions.
+        </p>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-3 pt-1">
+        <button type="button" onclick="closeNoticeModal()" class="btn-primary flex-1 py-3 text-xs justify-center font-medium shadow-sm">
+          I Understand • Explore Demo
+        </button>
+        <a href="contact.html" onclick="closeNoticeModal()" class="btn-secondary py-3 text-xs justify-center text-center">
+          Contact Team
+        </a>
+      </div>
+
+      <div class="text-center pt-3 text-[11px] text-muted-custom font-mono">
+        Official launch coming soon • <a href="mailto:contact@ourhomeindia.com" class="hover:text-coral underline underline-offset-2">contact@ourhomeindia.com</a>
+      </div>
+    </div>
+  `;
+  modal.classList.remove("hidden");
+  document.body.style.overflow = "hidden";
+}
+
+function closeNoticeModal() {
+  const modal = document.getElementById("dev-notice-modal");
+  if (modal) {
+    modal.classList.add("hidden");
+    document.body.style.overflow = "";
+  }
+  try {
+    sessionStorage.setItem("ohi_preview_notice_seen", "true");
+  } catch (e) {
+    // Session storage not available
+  }
+}
+
+function initDevelopmentNotice() {
+  // 1. Inject persistent top announcement banner if not already present
+  if (!document.getElementById("dev-notice-banner")) {
+    const banner = document.createElement("div");
+    banner.id = "dev-notice-banner";
+    banner.className = "dev-notice-banner bg-[#181715] text-[#e8e0d2] text-xs py-2 px-3 sm:px-4 border-b border-[#2d2a26] relative z-40";
+    banner.innerHTML = `
+      <div class="max-w-7xl mx-auto flex items-center justify-between gap-2">
+        <div class="flex items-center gap-2 truncate">
+          <span class="inline-flex items-center gap-1 bg-amber-500/20 text-amber-300 px-2 py-0.5 rounded text-[10px] font-mono uppercase tracking-wider font-semibold shrink-0">
+            <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
+            Demo Preview
+          </span>
+          <span class="truncate text-[11px] sm:text-xs text-stone-300">
+            <strong>Website under development & coming soon.</strong> All listings, prices & details shown are sample/example data.
+          </span>
+        </div>
+        <div class="flex items-center gap-2 shrink-0">
+          <button onclick="openNoticeModal()" class="text-coral hover:underline text-[11px] sm:text-xs font-medium cursor-pointer">
+            Notice Details
+          </button>
+        </div>
+      </div>
+    `;
+    document.body.insertBefore(banner, document.body.firstChild);
+  }
+
+  // 2. Open pop-up disclaimer modal on first visit in the session
+  try {
+    const hasSeenNotice = sessionStorage.getItem("ohi_preview_notice_seen");
+    if (!hasSeenNotice) {
+      // Small timeout for smooth entry animation
+      setTimeout(() => {
+        openNoticeModal();
+      }, 500);
+    }
+  } catch (e) {
+    setTimeout(() => {
+      openNoticeModal();
+    }, 500);
   }
 }
 
@@ -274,6 +394,7 @@ function initScrollReveal() {
 
 // Global DOM Ready Initialization
 document.addEventListener("DOMContentLoaded", () => {
+  initDevelopmentNotice();
   initMobileNavigation();
   initScrollReveal();
 

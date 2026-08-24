@@ -660,3 +660,10 @@ h1, h2, h3, .heading-display {
   from { transform: translateX(100%); opacity: 0; }
   to { transform: translateX(0); opacity: 1; }
 }
+
+/* Development Notice Banner */
+.dev-notice-banner {
+  border-bottom: 1px solid rgba(232, 165, 90, 0.2);
+  background: linear-gradient(90deg, #181715 0%, #201e1a 100%);
+}
+
