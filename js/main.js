@@ -323,6 +323,52 @@ function closeNoticeModal() {
   }
 }
 
+function getUserTimeZone() {
+  try {
+    const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || "UTC";
+    const now = new Date();
+    const offsetMin = -now.getTimezoneOffset();
+    const sign = offsetMin >= 0 ? "+" : "-";
+    const hrs = String(Math.floor(Math.abs(offsetMin) / 60)).padStart(2, "0");
+    const mins = String(Math.abs(offsetMin) % 60).padStart(2, "0");
+    return `${tz} (UTC${sign}${hrs}:${mins})`;
+  } catch (e) {
+    return "UTC";
+  }
+}
+
+function startNoticeClock() {
+  const clockEl = document.getElementById("dev-notice-clock");
+  if (!clockEl) return;
+
+  function updateClock() {
+    const now = new Date();
+    const tz = getUserTimeZone();
+    const dateStr = now.toLocaleDateString(undefined, {
+      weekday: "short",
+      year: "numeric",
+      month: "short",
+      day: "numeric"
+    });
+    const timeStr = now.toLocaleTimeString(undefined, {
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+      hour12: true
+    });
+
+    clockEl.innerHTML = `
+      <svg class="w-3.5 h-3.5 text-amber-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+      </svg>
+      <span class="text-stone-300"><strong class="text-amber-300/95 font-semibold">${tz}</strong> &bull; ${dateStr}, ${timeStr}</span>
+    `;
+  }
+
+  updateClock();
+  setInterval(updateClock, 1000);
+}
+
 function initDevelopmentNotice() {
   // 1. Inject persistent top announcement banner if not already present
   if (!document.getElementById("dev-notice-banner")) {
@@ -330,8 +376,8 @@ function initDevelopmentNotice() {
     banner.id = "dev-notice-banner";
     banner.className = "dev-notice-banner bg-[#181715] text-[#e8e0d2] text-xs py-2 px-3 sm:px-4 border-b border-[#2d2a26] relative z-40";
     banner.innerHTML = `
-      <div class="max-w-7xl mx-auto flex items-center justify-between gap-2">
-        <div class="flex items-center gap-2 truncate">
+      <div class="max-w-7xl mx-auto flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-4">
+        <div class="flex items-center gap-2 truncate min-w-0">
           <span class="inline-flex items-center gap-1 bg-amber-500/20 text-amber-300 px-2 py-0.5 rounded text-[10px] font-mono uppercase tracking-wider font-semibold shrink-0">
             <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
             Demo Preview
@@ -340,14 +386,17 @@ function initDevelopmentNotice() {
             <strong>Website under development & coming soon.</strong> All listings, prices & details shown are sample/example data.
           </span>
         </div>
-        <div class="flex items-center gap-2 shrink-0">
-          <button onclick="openNoticeModal()" class="text-coral hover:underline text-[11px] sm:text-xs font-medium cursor-pointer">
+        <div class="flex items-center gap-2.5 sm:gap-3 shrink-0">
+          <div id="dev-notice-clock" class="flex items-center gap-1.5 bg-stone-900/90 px-2.5 py-0.5 rounded border border-stone-700/60 font-mono text-[10px] sm:text-[11px] shadow-sm">
+          </div>
+          <button onclick="openNoticeModal()" class="text-coral hover:underline text-[11px] sm:text-xs font-medium cursor-pointer shrink-0">
             Notice Details
           </button>
         </div>
       </div>
     `;
     document.body.insertBefore(banner, document.body.firstChild);
+    startNoticeClock();
   }
 
   // 2. Open pop-up disclaimer modal on first visit in the session
