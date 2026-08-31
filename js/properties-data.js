@@ -50,7 +50,7 @@ const PROPERTIES_DATA = [
     agent: {
       name: "Mohit Verma",
       role: "Senior Property Advisor",
-      phone: "+91 98100 45678",
+      phone: "+91 92110 43281",
       email: "contact@ourhomeindia.com"
     }
   },
@@ -96,7 +96,7 @@ const PROPERTIES_DATA = [
     agent: {
       name: "Sunil Sharma",
       role: "Leasing Specialist",
-      phone: "+91 98111 87654",
+      phone: "+91 92110 43281",
       email: "contact@ourhomeindia.com"
     }
   },
@@ -144,7 +144,7 @@ const PROPERTIES_DATA = [
     agent: {
       name: "Mohit Verma",
       role: "Senior Property Advisor",
-      phone: "+91 98100 45678",
+      phone: "+91 92110 43281",
       email: "contact@ourhomeindia.com"
     }
   },
@@ -188,7 +188,7 @@ const PROPERTIES_DATA = [
     agent: {
       name: "Rajesh Rawat",
       role: "Commercial Property Lead",
-      phone: "+91 98105 12345",
+      phone: "+91 92110 43281",
       email: "contact@ourhomeindia.com"
     }
   },
@@ -232,7 +232,7 @@ const PROPERTIES_DATA = [
     agent: {
       name: "Sunil Sharma",
       role: "Leasing Specialist",
-      phone: "+91 98111 87654",
+      phone: "+91 92110 43281",
       email: "contact@ourhomeindia.com"
     }
   },
@@ -278,7 +278,7 @@ const PROPERTIES_DATA = [
     agent: {
       name: "Mohit Verma",
       role: "Senior Property Advisor",
-      phone: "+91 98100 45678",
+      phone: "+91 92110 43281",
       email: "contact@ourhomeindia.com"
     }
   },
@@ -322,7 +322,7 @@ const PROPERTIES_DATA = [
     agent: {
       name: "Sunil Sharma",
       role: "Leasing Specialist",
-      phone: "+91 98111 87654",
+      phone: "+91 92110 43281",
       email: "contact@ourhomeindia.com"
     }
   },
@@ -366,7 +366,7 @@ const PROPERTIES_DATA = [
     agent: {
       name: "Rajesh Rawat",
       role: "Commercial Property Lead",
-      phone: "+91 98105 12345",
+      phone: "+91 92110 43281",
       email: "contact@ourhomeindia.com"
     }
   }
