@@ -368,6 +368,15 @@ h1, h2, h3, .heading-display {
   transition: box-shadow 0.25s ease;
 }
 
+/* Logo on Mobile Devices */
+@media (max-width: 768px) {
+  .navbar-brand img,
+  .mobile-panel a img {
+    border-radius: 0rem 1rem 1rem 0rem;
+    margin-left: -0.5rem;
+  }
+}
+
 .nav-link {
   position: relative;
   padding: 0.25rem 0;
